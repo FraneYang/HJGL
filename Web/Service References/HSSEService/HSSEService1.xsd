@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.scs.com" elementFormDefault="qualified" targetNamespace="http://www.scs.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/HSSEServer/HSSEService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BLL.OpenService" />
+  <xs:element name="GetNoticeAttach">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="noticeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoticeAttachResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BLL.OpenService" minOccurs="0" name="GetNoticeAttachResult" nillable="true" type="q1:FileStruct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubUnitAttach">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subUnitQualityId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="attach" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubUnitAttachResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BLL.OpenService" minOccurs="0" name="GetSubUnitAttachResult" nillable="true" type="q2:FileStruct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileReleaseAttach">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileReleaseId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileReleaseAttachResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BLL.OpenService" minOccurs="0" name="GetFileReleaseAttachResult" nillable="true" type="q3:ArrayOfFileStruct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

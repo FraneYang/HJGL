@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBC7282A-9E2B-4BD6-9C6D-333CEFC6F332}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseInfo\ComponentsService.cs" />
+    <Compile Include="BaseInfo\ControlService.cs" />
+    <Compile Include="BaseInfo\DetectionService.cs" />
+    <Compile Include="BaseInfo\GrooveService.cs" />
+    <Compile Include="BaseInfo\InstallationService.cs" />
+    <Compile Include="BaseInfo\MaterialService.cs" />
+    <Compile Include="BaseInfo\MediumService.cs" />
+    <Compile Include="BaseInfo\PipingClassService.cs" />
+    <Compile Include="BaseInfo\PressureService.cs" />
+    <Compile Include="BaseInfo\ProjectService.cs" />
+    <Compile Include="DataIn\DataInTableService.cs" />
+    <Compile Include="HotHardManage\HotHardManageEditService.cs" />
+    <Compile Include="HotHardManage\ShowHotHardSearchService.cs" />
+    <Compile Include="MaterialManage\ElectrodeBakeService.cs" />
+    <Compile Include="MaterialManage\ElectrodeRecoveryService.cs" />
+    <Compile Include="MaterialManage\EMaterialRegistService.cs" />
+    <Compile Include="MaterialManage\EMInventoryRecordsService.cs" />
+    <Compile Include="MaterialManage\EWeldRHRecordService.cs" />
+    <Compile Include="PersonManage\WelderScoreService.cs" />
+    <Compile Include="PersonManage\WeldMethodItemService.cs" />
+    <Compile Include="RepairManage\RepairService.cs" />
+    <Compile Include="SysManage\SysSetService.cs" />
+    <Compile Include="BaseInfo\TestingService.cs" />
+    <Compile Include="BaseInfo\UnitService.cs" />
+    <Compile Include="BaseInfo\WeldingMethodService.cs" />
+    <Compile Include="BaseInfo\WeldService.cs" />
+    <Compile Include="BaseInfo\WorkAreaService.cs" />
+    <Compile Include="BaseInfo\ConsumablesService.cs" />
+    <Compile Include="CheckManage\CheckItemManageService.cs" />
+    <Compile Include="CheckManage\CheckManageService.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="Dt\DocumentService.cs" />
+    <Compile Include="ErrLogInfo.cs" />
+    <Compile Include="FriendlyException.cs" />
+    <Compile Include="Funs.cs" />
+    <Compile Include="HotProessManage\HotProessManageEditService.cs" />
+    <Compile Include="MethodRefelect.cs" />
+    <Compile Include="PersonManage\PersonItemService.cs" />
+    <Compile Include="PersonManage\PersonManageService.cs" />
+    <Compile Include="PersonManage\TeamGroupService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepairManage\ShowRepairSearchService.cs" />
+    <Compile Include="ReportPrint\ReportPrintService.cs" />
+    <Compile Include="SessionName.cs" />
+    <Compile Include="SoftRegeditService.cs" />
+    <Compile Include="SQLHelper.cs" />
+    <Compile Include="SynIDCardAPI\SynIDCardAPI.cs" />
+    <Compile Include="SysManage\ButtonPowerService.cs" />
+    <Compile Include="SysManage\ButtonToMenuService.cs" />
+    <Compile Include="SysManage\LogService.cs" />
+    <Compile Include="SysManage\RolePowerService.cs" />
+    <Compile Include="SysManage\RoleService.cs" />
+    <Compile Include="SysManage\SysMenuService.cs" />
+    <Compile Include="SysManage\UserService.cs" />
+    <Compile Include="SysManage\UserShowColumnsService.cs" />
+    <Compile Include="SysManage\ErrLogInfoService.cs" />
+    <Compile Include="TestPackageManage\AItemEndCheckService.cs" />
+    <Compile Include="TestPackageManage\BItemEndCheckService.cs" />
+    <Compile Include="TestPackageManage\ShowJointInfoViewService.cs" />
+    <Compile Include="TestPackageManage\ShowTestPackageSearchService.cs" />
+    <Compile Include="TestPackageManage\TestPackageManageAuditService.cs" />
+    <Compile Include="TestPackageManage\TestPackageManageEditService.cs" />
+    <Compile Include="TrustManage\ShowTrustSearchService.cs" />
+    <Compile Include="TrustManage\TrustManageEditService.cs" />
+    <Compile Include="WeldingManage\PointManageService.cs" />
+    <Compile Include="WeldingManage\ProcedureImageService.cs" />
+    <Compile Include="WeldingManage\PW_IsoInfoService.cs" />
+    <Compile Include="WeldingManage\PW_JointInfoService.cs" />
+    <Compile Include="WeldingManage\WeldingProcedureAnalysisService.cs" />
+    <Compile Include="WeldingManage\WeldingProcedureJotService.cs" />
+    <Compile Include="WeldingManage\WeldingProcedureService.cs" />
+    <Compile Include="WeldingManage\WeldReportService.cs" />
+    <Compile Include="WeldingManage\WeldReportExportService.cs" />
+    <Compile Include="WeldingReportService\DetectionAnalyzeService.cs" />
+    <Compile Include="WeldingReportService\IsoCmprehensiveService.cs" />
+    <Compile Include="WeldingReportService\IsoCompreInfoService.cs" />
+    <Compile Include="WeldingReportService\JointComprehensiveService.cs" />
+    <Compile Include="WeldingReportService\MediaComprehensiveService.cs" />
+    <Compile Include="WeldingReportService\PrefabricatedInstallService.cs" />
+    <Compile Include="WeldingReportService\TrustCheckService.cs" />
+    <Compile Include="WeldingReportService\UnitWorkareaAnalyzeService.cs" />
+    <Compile Include="WeldingReportService\UnitWorkAreaQualityService.cs" />
+    <Compile Include="WeldingReportService\WelderPerformanceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{FD1E1931-1688-4B4A-BCD6-335A81465343}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

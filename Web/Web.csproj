@@ -1,0 +1,2702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C88D3156-2D56-4DB0-922E-1995FB61C9BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SYNCARDOCXLib">
+      <HintPath>..\Lib\AxInterop.SYNCARDOCXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseInfo\BaseInfoMain.aspx" />
+    <Content Include="BaseInfo\Components.aspx" />
+    <Content Include="BaseInfo\Control.aspx" />
+    <Content Include="BaseInfo\Detection.aspx" />
+    <Content Include="BaseInfo\Groove.aspx" />
+    <Content Include="BaseInfo\Installation.aspx" />
+    <Content Include="BaseInfo\Material.aspx" />
+    <Content Include="BaseInfo\Medium.aspx" />
+    <Content Include="BaseInfo\PipingClass.aspx" />
+    <Content Include="BaseInfo\Pressure.aspx" />
+    <Content Include="BaseInfo\Project.aspx" />
+    <Content Include="BaseInfo\Testing.aspx" />
+    <Content Include="BaseInfo\Unit.aspx" />
+    <Content Include="BaseInfo\Weld.aspx" />
+    <Content Include="BaseInfo\WeldingMethod.aspx" />
+    <Content Include="BaseInfo\WorkArea.aspx" />
+    <Content Include="BaseInfo\Consumables.aspx" />
+    <Content Include="CheckManage\CheckManage.aspx" />
+    <Content Include="CheckManage\CheckManageAudit.aspx" />
+    <Content Include="CheckManage\CheckManageMain.aspx" />
+    <Content Include="CheckManage\ShowTrust.aspx" />
+    <Content Include="Controls\ChartControl.ascx" />
+    <Content Include="DataIn\DataIn.aspx" />
+    <Content Include="DataIn\DataInMain.aspx" />
+    <Content Include="DataIn\DataUpdate.aspx" />
+    <Content Include="DataIn\DataInTableEdit.aspx" />
+    <Content Include="DataIn\ProgressBar.aspx" />
+    <Content Include="DataIn\ProgressBarIn.aspx" />
+    <Content Include="DataIn\ProgressBarSave.aspx" />
+    <Content Include="DataIn\ProgressBarUpdate.aspx" />
+    <Content Include="DataIn\ProgressBarUpdateIn.aspx" />
+    <Content Include="DataIn\ProgressBarUpdateSave.aspx" />
+    <Content Include="DataIn\DataInTable.aspx" />
+    <Content Include="DataIn\DataInTableProgressBar.aspx" />
+    <Content Include="Downloads\chinaexcelweb.cab" />
+    <Content Include="ErrLog.txt" />
+    <Content Include="Ext\adapter\ext\ext-base.js" />
+    <Content Include="Ext\adapter\jquery\ext-jquery-adapter.js" />
+    <Content Include="Ext\adapter\jquery\jquery.js" />
+    <Content Include="Ext\adapter\prototype\effects.js" />
+    <Content Include="Ext\adapter\prototype\ext-prototype-adapter.js" />
+    <Content Include="Ext\adapter\prototype\prototype.js" />
+    <Content Include="Ext\adapter\prototype\scriptaculous.js" />
+    <Content Include="Ext\adapter\yui\ext-yui-adapter.js" />
+    <Content Include="Ext\adapter\yui\yui-utilities.js" />
+    <Content Include="Ext\ext-all.js" />
+    <Content Include="Ext\icons\arrow-down.gif" />
+    <Content Include="Ext\icons\arrow-up.gif" />
+    <Content Include="Ext\icons\class.gif" />
+    <Content Include="Ext\icons\cmp.gif" />
+    <Content Include="Ext\icons\config.gif" />
+    <Content Include="Ext\icons\docs.gif" />
+    <Content Include="Ext\icons\example.gif" />
+    <Content Include="Ext\icons\expand-members.gif" />
+    <Content Include="Ext\icons\fam\add.gif" />
+    <Content Include="Ext\icons\fam\application_go.png" />
+    <Content Include="Ext\icons\fam\application_view_list.png" />
+    <Content Include="Ext\icons\fam\cog.png" />
+    <Content Include="Ext\icons\fam\cog_edit.png" />
+    <Content Include="Ext\icons\fam\connect.gif" />
+    <Content Include="Ext\icons\fam\connect.png" />
+    <Content Include="Ext\icons\fam\cross.gif" />
+    <Content Include="Ext\icons\fam\delete.gif" />
+    <Content Include="Ext\icons\fam\feed_add.png" />
+    <Content Include="Ext\icons\fam\feed_delete.png" />
+    <Content Include="Ext\icons\fam\feed_error.png" />
+    <Content Include="Ext\icons\fam\folder_go.png" />
+    <Content Include="Ext\icons\fam\folder_wrench.png" />
+    <Content Include="Ext\icons\fam\grid.png" />
+    <Content Include="Ext\icons\fam\plugin.gif" />
+    <Content Include="Ext\icons\fam\plugin_add.gif" />
+    <Content Include="Ext\icons\fam\rss_go.png" />
+    <Content Include="Ext\icons\fam\SILK.txt" />
+    <Content Include="Ext\icons\fam\table_refresh.png" />
+    <Content Include="Ext\icons\fam\user.gif" />
+    <Content Include="Ext\icons\fam\user.png" />
+    <Content Include="Ext\icons\fam\user_add.gif" />
+    <Content Include="Ext\icons\fam\user_add.png" />
+    <Content Include="Ext\icons\fam\user_comment.png" />
+    <Content Include="Ext\icons\fam\user_delete.gif" />
+    <Content Include="Ext\icons\fam\user_delete.png" />
+    <Content Include="Ext\icons\fam\user_edit.png" />
+    <Content Include="Ext\icons\fam\user_female.gif" />
+    <Content Include="Ext\icons\fam\user_female.png" />
+    <Content Include="Ext\icons\fam\user_gray.png" />
+    <Content Include="Ext\icons\fam\user_green.gif" />
+    <Content Include="Ext\icons\fam\user_green.png" />
+    <Content Include="Ext\icons\fam\user_orange.png" />
+    <Content Include="Ext\icons\fam\user_red.png" />
+    <Content Include="Ext\icons\fam\user_suit.gif" />
+    <Content Include="Ext\icons\fam\user_suit.png" />
+    <Content Include="Ext\icons\fav.gif" />
+    <Content Include="Ext\icons\folder.gif" />
+    <Content Include="Ext\icons\folder_open.gif" />
+    <Content Include="Ext\icons\save.gif" />
+    <Content Include="Ext\icons\static.gif" />
+    <Content Include="Ext\resources\css\borders.css" />
+    <Content Include="Ext\resources\css\box.css" />
+    <Content Include="Ext\resources\css\button.css" />
+    <Content Include="Ext\resources\css\combo.css" />
+    <Content Include="Ext\resources\css\core.css" />
+    <Content Include="Ext\resources\css\date-picker.css" />
+    <Content Include="Ext\resources\css\dd.css" />
+    <Content Include="Ext\resources\css\debug.css" />
+    <Content Include="Ext\resources\css\dialog.css" />
+    <Content Include="Ext\resources\css\editor.css" />
+    <Content Include="Ext\resources\css\ext-all.css" />
+    <Content Include="Ext\resources\css\form.css" />
+    <Content Include="Ext\resources\css\grid.css" />
+    <Content Include="Ext\resources\css\layout.css" />
+    <Content Include="Ext\resources\css\menu.css" />
+    <Content Include="Ext\resources\css\panel.css" />
+    <Content Include="Ext\resources\css\progress.css" />
+    <Content Include="Ext\resources\css\qtips.css" />
+    <Content Include="Ext\resources\css\README.txt" />
+    <Content Include="Ext\resources\css\reset-min.css" />
+    <Content Include="Ext\resources\css\reset.css" />
+    <Content Include="Ext\resources\css\resizable.css" />
+    <Content Include="Ext\resources\css\slider.css" />
+    <Content Include="Ext\resources\css\tabs.css" />
+    <Content Include="Ext\resources\css\toolbar.css" />
+    <Content Include="Ext\resources\css\tree.css" />
+    <Content Include="Ext\resources\css\window.css" />
+    <Content Include="Ext\resources\css\xtheme-gray.css" />
+    <Content Include="Ext\resources\extanim32.gif" />
+    <Content Include="Ext\resources\images\default\box\corners-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\corners.gif" />
+    <Content Include="Ext\resources\images\default\box\l-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\l.gif" />
+    <Content Include="Ext\resources\images\default\box\r-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\r.gif" />
+    <Content Include="Ext\resources\images\default\box\tb-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\tb.gif" />
+    <Content Include="Ext\resources\images\default\button\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\default\button\btn-sprite.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-add.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\editor\tb-sprite.gif" />
+    <Content Include="Ext\resources\images\default\form\clear-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\date-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\error-tip-corners.gif" />
+    <Content Include="Ext\resources\images\default\form\exclamation.gif" />
+    <Content Include="Ext\resources\images\default\form\search-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\text-bg.gif" />
+    <Content Include="Ext\resources\images\default\form\trigger-tpl.gif" />
+    <Content Include="Ext\resources\images\default\form\trigger.gif" />
+    <Content Include="Ext\resources\images\default\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\arrow-left-white.gif" />
+    <Content Include="Ext\resources\images\default\grid\arrow-right-white.gif" />
+    <Content Include="Ext\resources\images\default\grid\col-move-bottom.gif" />
+    <Content Include="Ext\resources\images\default\grid\col-move-top.gif" />
+    <Content Include="Ext\resources\images\default\grid\columns.gif" />
+    <Content Include="Ext\resources\images\default\grid\dirty.gif" />
+    <Content Include="Ext\resources\images\default\grid\done.gif" />
+    <Content Include="Ext\resources\images\default\grid\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\grid\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\grid\footer-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-blue-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-blue-split.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-hrow.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-loading.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-split.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-vista-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hd-btn.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hrow-over.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hrow.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-special-col-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\group-by.gif" />
+    <Content Include="Ext\resources\images\default\grid\group-expand-sprite.gif" />
+    <Content Include="Ext\resources\images\default\grid\hd-pop.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-asc.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-desc.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-lock.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-lock.png" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-unlock.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-unlock.png" />
+    <Content Include="Ext\resources\images\default\grid\invalid_line.gif" />
+    <Content Include="Ext\resources\images\default\grid\loading.gif" />
+    <Content Include="Ext\resources\images\default\grid\mso-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\nowait.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-first-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-first.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-last-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-last.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-next-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-next.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-prev-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-prev.gif" />
+    <Content Include="Ext\resources\images\default\grid\pick-button.gif" />
+    <Content Include="Ext\resources\images\default\grid\refresh.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-check-sprite.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-expand-sprite.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-over.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-sel.gif" />
+    <Content Include="Ext\resources\images\default\grid\sort_asc.gif" />
+    <Content Include="Ext\resources\images\default\grid\sort_desc.gif" />
+    <Content Include="Ext\resources\images\default\grid\wait.gif" />
+    <Content Include="Ext\resources\images\default\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\default\layout\expand.gif" />
+    <Content Include="Ext\resources\images\default\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\mini-bottom.gif" />
+    <Content Include="Ext\resources\images\default\layout\mini-left.gif" />
+    <Content Include="Ext\resources\images\default\layout\mini-right.gif" />
+    <Content Include="Ext\resources\images\default\layout\mini-top.gif" />
+    <Content Include="Ext\resources\images\default\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\default\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\stick.gif" />
+    <Content Include="Ext\resources\images\default\layout\stuck.gif" />
+    <Content Include="Ext\resources\images\default\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\default\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\default\menu\checked.gif" />
+    <Content Include="Ext\resources\images\default\menu\group-checked.gif" />
+    <Content Include="Ext\resources\images\default\menu\item-over.gif" />
+    <Content Include="Ext\resources\images\default\menu\item-over2.gif" />
+    <Content Include="Ext\resources\images\default\menu\menu-parent.gif" />
+    <Content Include="Ext\resources\images\default\menu\menu.gif" />
+    <Content Include="Ext\resources\images\default\menu\unchecked.gif" />
+    <Content Include="Ext\resources\images\default\panel\corners-sprite.gif" />
+    <Content Include="Ext\resources\images\default\panel\left-right.gif" />
+    <Content Include="Ext\resources\images\default\panel\light-hd.gif" />
+    <Content Include="Ext\resources\images\default\panel\tool-sprite-tpl.gif" />
+    <Content Include="Ext\resources\images\default\panel\tool-sprites.gif" />
+    <Content Include="Ext\resources\images\default\panel\tools-sprites-trans.gif" />
+    <Content Include="Ext\resources\images\default\panel\top-bottom.gif" />
+    <Content Include="Ext\resources\images\default\panel\top-bottom.png" />
+    <Content Include="Ext\resources\images\default\panel\white-corners-sprite.gif" />
+    <Content Include="Ext\resources\images\default\panel\white-left-right.gif" />
+    <Content Include="Ext\resources\images\default\panel\white-top-bottom.gif" />
+    <Content Include="Ext\resources\images\default\progress\progress-bg.gif" />
+    <Content Include="Ext\resources\images\default\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\default\qtip\close.gif" />
+    <Content Include="Ext\resources\images\default\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\default\s.gif" />
+    <Content Include="Ext\resources\images\default\shadow-c.png" />
+    <Content Include="Ext\resources\images\default\shadow-lr.png" />
+    <Content Include="Ext\resources\images\default\shadow.png" />
+    <Content Include="Ext\resources\images\default\shared\blue-loading.gif" />
+    <Content Include="Ext\resources\images\default\shared\calendar.gif" />
+    <Content Include="Ext\resources\images\default\shared\glass-bg.gif" />
+    <Content Include="Ext\resources\images\default\shared\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\default\shared\large-loading.gif" />
+    <Content Include="Ext\resources\images\default\shared\left-btn.gif" />
+    <Content Include="Ext\resources\images\default\shared\loading-balls.gif" />
+    <Content Include="Ext\resources\images\default\shared\right-btn.gif" />
+    <Content Include="Ext\resources\images\default\shared\warning.gif" />
+    <Content Include="Ext\resources\images\default\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\square.gif" />
+    <Content Include="Ext\resources\images\default\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\default\slider\slider-bg.png" />
+    <Content Include="Ext\resources\images\default\slider\slider-thumb.png" />
+    <Content Include="Ext\resources\images\default\slider\slider-v-bg.png" />
+    <Content Include="Ext\resources\images\default\slider\slider-v-thumb.png" />
+    <Content Include="Ext\resources\images\default\tabs\scroll-left.gif" />
+    <Content Include="Ext\resources\images\default\tabs\scroll-right.gif" />
+    <Content Include="Ext\resources\images\default\tabs\scroller-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-close.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-strip-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-strip-bg.png" />
+    <Content Include="Ext\resources\images\default\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tabs-sprite.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-arrow-light.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-over-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\tb-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\images\default\tree\arrows.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-add.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-between.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-over.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-under.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-minus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-plus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-line.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-minus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-minus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-plus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-plus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow.gif" />
+    <Content Include="Ext\resources\images\default\tree\folder-open.gif" />
+    <Content Include="Ext\resources\images\default\tree\folder.gif" />
+    <Content Include="Ext\resources\images\default\tree\ICON1.GIF" />
+    <Content Include="Ext\resources\images\default\tree\leaf.gif" />
+    <Content Include="Ext\resources\images\default\tree\loading.gif" />
+    <Content Include="Ext\resources\images\default\tree\s.gif" />
+    <Content Include="Ext\resources\images\default\window\icon-error.gif" />
+    <Content Include="Ext\resources\images\default\window\icon-info.gif" />
+    <Content Include="Ext\resources\images\default\window\icon-question.gif" />
+    <Content Include="Ext\resources\images\default\window\icon-warning.gif" />
+    <Content Include="Ext\resources\images\default\window\left-corners.png" />
+    <Content Include="Ext\resources\images\default\window\left-right.png" />
+    <Content Include="Ext\resources\images\default\window\right-corners.png" />
+    <Content Include="Ext\resources\images\default\window\top-bottom.png" />
+    <Content Include="Ext\resources\images\gray\button\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\gray\button\btn-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\gray\panel\corners-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\panel\left-right.gif" />
+    <Content Include="Ext\resources\images\gray\panel\light-hd.gif" />
+    <Content Include="Ext\resources\images\gray\panel\tool-sprite-tpl.gif" />
+    <Content Include="Ext\resources\images\gray\panel\tool-sprites.gif" />
+    <Content Include="Ext\resources\images\gray\panel\tools-sprites-trans.gif" />
+    <Content Include="Ext\resources\images\gray\panel\top-bottom.gif" />
+    <Content Include="Ext\resources\images\gray\panel\top-bottom.png" />
+    <Content Include="Ext\resources\images\gray\panel\white-corners-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\panel\white-left-right.gif" />
+    <Content Include="Ext\resources\images\gray\panel\white-top-bottom.gif" />
+    <Content Include="Ext\resources\images\gray\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\gray\qtip\close.gif" />
+    <Content Include="Ext\resources\images\gray\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\s.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\scroll-left.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\scroll-right.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\scroller-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-close.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-strip-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-strip-bg.png" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tabs-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\bg.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\btn-arrow-light.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\btn-over-bg.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\tb-bg.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\window\icon-error.gif" />
+    <Content Include="Ext\resources\images\gray\window\icon-info.gif" />
+    <Content Include="Ext\resources\images\gray\window\icon-question.gif" />
+    <Content Include="Ext\resources\images\gray\window\icon-warning.gif" />
+    <Content Include="Ext\resources\images\gray\window\left-corners.png" />
+    <Content Include="Ext\resources\images\gray\window\left-right.png" />
+    <Content Include="Ext\resources\images\gray\window\right-corners.png" />
+    <Content Include="Ext\resources\images\gray\window\top-bottom.png" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-center.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-left.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-right.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\close.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\collapse.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\dlg-bg.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\e-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\expand.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\s-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\se-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\w-handle.gif" />
+    <Content Include="Ext\resources\images\vista\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\vista\grid\grid-split.gif" />
+    <Content Include="Ext\resources\images\vista\grid\grid-vista-hd.gif" />
+    <Content Include="Ext\resources\images\vista\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\vista\layout\expand.gif" />
+    <Content Include="Ext\resources\images\vista\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\vista\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\stick.gif" />
+    <Content Include="Ext\resources\images\vista\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\vista\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\vista\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\vista\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\s.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\vista\toolbar\tb-btn-sprite.gif" />
+    <Content Include="HotHardManage\HotHardManageAudit.aspx" />
+    <Content Include="HotHardManage\HotHardManageEdit.aspx" />
+    <Content Include="HotHardManage\HotHardManageMain.aspx" />
+    <Content Include="HotHardManage\ShowHotHardSearch.aspx" />
+    <Content Include="HotProessManage\HotProessManageEdit.aspx" />
+    <Content Include="HotProessManage\HotProessManageMain.aspx" />
+    <Content Include="HotProessManage\ShowHotProessSearch.aspx" />
+    <Content Include="Images\005.gif" />
+    <Content Include="Images\AddWbs.gif" />
+    <Content Include="Images\batchaddbutton.gif" />
+    <Content Include="Images\BtnImg\CheckControl.jpg" />
+    <Content Include="Images\BtnImg\CheckList.jpg" />
+    <Content Include="Images\BtnImg\ConstructionStandard.jpg" />
+    <Content Include="Images\BtnImg\ConstructionStandardList.jpg" />
+    <Content Include="Images\BtnImg\ControlItemAndCycle.jpg" />
+    <Content Include="Images\BtnImg\DocumentHandle.jpg" />
+    <Content Include="Images\BtnImg\DrawingAudit.jpg" />
+    <Content Include="Images\BtnImg\DrawingDisclosure.jpg" />
+    <Content Include="Images\BtnImg\FileTemplete.jpg" />
+    <Content Include="Images\BtnImg\FinalFile.jpg" />
+    <Content Include="Images\BtnImg\HSSEFinalFile.jpg" />
+    <Content Include="Images\BtnImg\InfoStatistic.jpg" />
+    <Content Include="Images\BtnImg\InstallationList.jpg" />
+    <Content Include="Images\BtnImg\InstallToPackage.jpg" />
+    <Content Include="Images\BtnImg\NoFourLetoff.jpg" />
+    <Content Include="Images\BtnImg\NonconformityNotice.jpg" />
+    <Content Include="Images\BtnImg\NonconformityReview.jpg" />
+    <Content Include="Images\BtnImg\OwnEquipment.jpg" />
+    <Content Include="Images\BtnImg\ProcessInfoManager.jpg" />
+    <Content Include="Images\BtnImg\ReceiveFileManager.jpg" />
+    <Content Include="Images\BtnImg\ReceiveMail.jpg" />
+    <Content Include="Images\BtnImg\RectifyNotice.jpg" />
+    <Content Include="Images\BtnImg\RepriseApply.jpg" />
+    <Content Include="Images\BtnImg\SendMail.jpg" />
+    <Content Include="Images\BtnImg\SpotCheck.jpg" />
+    <Content Include="Images\BtnImg\SubUnitEquipment.jpg" />
+    <Content Include="Images\BtnImg\WBSCustom.jpg" />
+    <Content Include="Images\CancelAudit.gif" />
+    <Content Include="Images\Cycle.jpg" />
+    <Content Include="Images\DelWbs.gif" />
+    <Content Include="Images\ErrLog.gif" />
+    <Content Include="Images\ExportJots.gif" />
+    <Content Include="Images\FinalFile.gif" />
+    <Content Include="Ajax.aspx" />
+    <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-FreeTextBox.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-ImageGallery.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-Pro.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-ToolbarItems.js" />
+    <Content Include="aspnet_client\FreeTextBox\FTB-Utility.js" />
+    <Content Include="aspnet_client\FreeTextBox\images\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\buttons.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\buttons.png" />
+    <Content Include="aspnet_client\FreeTextBox\images\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\csharp.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\css\toolbarbutton.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittablecell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\edittablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergecolumns.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\misc\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\separator.vertical.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\splitcells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\mergecolumns.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbar.vertical.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbutton.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbutton.down.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.off.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.on.out.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\images\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ar-SA.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ca-CA.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ca-ES.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\cs-CZ.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\da-DK.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\de-DE.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\el-GR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\en-US.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\es-ES.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\fa-IR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\fr-FR.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\he-IL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\hu-HU.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\it-IT.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ja-JP.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ko-kr.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\Languages.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\nb-NO.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\nl-NL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\pl-PL.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\pt-pt.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ro-RO.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\ru-ru.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\sk-SK.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\sv-se.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\zh-cn.xml" />
+    <Content Include="aspnet_client\FreeTextBox\Languages\zh-TW.xml" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\normal.png" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\office2000\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\backcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\forecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\new.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\paste2.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.background.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.end2.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.off.normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.off.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.on.normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\toolbarbuttoncss.on.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\Untitled-2.png" />
+    <Content Include="aspnet_client\FreeTextBox\officeMac\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\editstyle.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\edittable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\fontforecolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\forumColumnBackground.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\iespellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\iespellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertbutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertcheckbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdiv.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertdropdownlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertform.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertlistbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertradiobutton.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnafter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablecolumnbefore.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowafter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowafter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowbefore.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttablerowbefore.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttextarea.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttextbox.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergecells.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mergerows.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mode.design.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\mode.html.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\netspell.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\netspell.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\normal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\normal.png" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bgcolor.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\borders.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\changecase.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\changecase.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\details.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\find.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\find.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertemail.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertemail.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggleborders.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggledetails.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\toggledetails.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\verse.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\verse.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\old\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\preview.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\selectall.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\separator.horizontal.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spacer.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bold.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bold.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bulletedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\bulletedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\copy.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\copy.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\createlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\createlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\cut.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\cut.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\delete.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\delete.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\deletetablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontbackcolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontbackcolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontforecolorpicker.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\fontforecolorpicker.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\indent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\indent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertdate.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertdate.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimage.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimage.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimagefromgallery.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertimagefromgallery.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertrule.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\insertrule.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttable.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttable.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablecolumn.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablecolumn.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablerow.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttablerow.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttime.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\inserttime.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\italic.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\italic.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifycenter.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifycenter.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyfull.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyfull.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyleft.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyleft.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyright.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\justifyright.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergecells.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergecells.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergerows.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\mergerows.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\numberedlist.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\numberedlist.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\outdent.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\outdent.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\paste.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\paste.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\print.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\print.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\redo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\redo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\removeformat.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\removeformat.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\save.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\save.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\spellcheck.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\spellcheck.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\strikethrough.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\strikethrough.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\subscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\subscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordclean.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\superscript.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\superscript.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\toolbar.horizontal.end.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\toolbar.horizontal.start.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\underline.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\underline.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\undo.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\undo.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\unlink.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\unlink.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordclean.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordclean.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordcount.gif" />
+    <Content Include="aspnet_client\FreeTextBox\officeXP\wordcount.over.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.big.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.small.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\folder.up.gif" />
+    <Content Include="aspnet_client\FreeTextBox\utility\image.gif" />
+    <Content Include="Controls\ClientJs\CalendarDlg.htm" />
+    <Content Include="Controls\ClientJs\ClientJs.ascx" />
+    <Content Include="Controls\GridNavgator.ascx" />
+    <Content Include="Controls\My97DatePicker\calendar.js" />
+    <Content Include="Controls\My97DatePicker\config.js" />
+    <Content Include="Controls\My97DatePicker\lang\en.js" />
+    <Content Include="Controls\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Controls\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Controls\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Controls\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Controls\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Controls\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Controls\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Controls\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Controls\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Controls\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Controls\My97DatePicker\WdatePicker.js" />
+    <Content Include="Controls\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Controls\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Controls\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Controls\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Controls\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Desktop.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\00.JPG" />
+    <Content Include="Images\0000.jpg" />
+    <Content Include="Images\001.GIF" />
+    <Content Include="Images\002.GIF" />
+    <Content Include="Images\003.GIF" />
+    <Content Include="Images\004.GIF" />
+    <Content Include="Images\addbutton.gif" />
+    <Content Include="Images\Audit.gif" />
+    <Content Include="Images\bg-1.gif" />
+    <Content Include="Images\BGLEFT.JPG" />
+    <Content Include="Images\bg_r.jpg" />
+    <Content Include="Images\btn3.gif" />
+    <Content Include="Images\btn4.gif" />
+    <Content Include="Images\BtnImg\AccidentType.jpg" />
+    <Content Include="Images\BtnImg\ConnSet.jpg" />
+    <Content Include="Images\BtnImg\ConstructSolution.jpg" />
+    <Content Include="Images\BtnImg\CostType.jpg" />
+    <Content Include="Images\BtnImg\DataBak.jpg" />
+    <Content Include="Images\BtnImg\Depart.jpg" />
+    <Content Include="Images\BtnImg\IncentiveNotice.jpg" />
+    <Content Include="Images\BtnImg\LawRegulationIdentify.jpg" />
+    <Content Include="Images\BtnImg\LawRegulationList.jpg" />
+    <Content Include="Images\BtnImg\Log.jpg" />
+    <Content Include="Images\BtnImg\ManagerRule.jpg" />
+    <Content Include="Images\BtnImg\ManagerRuleList.jpg" />
+    <Content Include="Images\BtnImg\Meeting1.jpg" />
+    <Content Include="Images\BtnImg\Meeting2.jpg" />
+    <Content Include="Images\BtnImg\Meeting3.jpg" />
+    <Content Include="Images\BtnImg\MeetingList.jpg" />
+    <Content Include="Images\BtnImg\PauseNotice.jpg" />
+    <Content Include="Images\BtnImg\PersonInfo.jpg" />
+    <Content Include="Images\BtnImg\PersonQuality.jpg" />
+    <Content Include="Images\BtnImg\PluginRunningLog.jpg" />
+    <Content Include="Images\BtnImg\PluginUsed.jpg" />
+    <Content Include="Images\BtnImg\Position.jpg" />
+    <Content Include="Images\BtnImg\Post.jpg" />
+    <Content Include="Images\BtnImg\ProjectInfo.jpg" />
+    <Content Include="Images\BtnImg\PunishNotice.jpg" />
+    <Content Include="Images\BtnImg\Role.jpg" />
+    <Content Include="Images\BtnImg\RolePower.jpg" />
+    <Content Include="Images\BtnImg\SolutionUpdateIdea.jpg" />
+    <Content Include="Images\BtnImg\SpecialEquipment.jpg" />
+    <Content Include="Images\BtnImg\TeamGroup.jpg" />
+    <Content Include="Images\BtnImg\Title.jpg" />
+    <Content Include="Images\BtnImg\UnitInfo.jpg" />
+    <Content Include="Images\BtnImg\UpdatePassword.jpg" />
+    <Content Include="Images\BtnImg\UserInfo.jpg" />
+    <Content Include="Images\BtnImg\WorkArea.jpg" />
+    <Content Include="Images\BtnSearch.gif" />
+    <Content Include="Images\CalendarSelector_select.gif" />
+    <Content Include="Images\cancel.gif" />
+    <Content Include="Images\Cancellation.jpg" />
+    <Content Include="Images\clear1.GIF" />
+    <Content Include="Images\Compile.gif" />
+    <Content Include="Images\confirm.gif" />
+    <Content Include="Images\DeleteBtn.gif" />
+    <Content Include="Images\deletebutton.gif" />
+    <Content Include="Images\DeskTop.jpg" />
+    <Content Include="Images\dlu.gif" />
+    <Content Include="Images\dlu1.gif" />
+    <Content Include="Images\Exit.gif" />
+    <Content Include="Images\Export.gif" />
+    <Content Include="Images\Find.gif" />
+    <Content Include="Images\folder.gif" />
+    <Content Include="Images\folder_open.gif" />
+    <Content Include="Images\GB.GIF" />
+    <Content Include="Images\Generate.gif" />
+    <Content Include="Images\go_see.gif" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\ICON1.GIF" />
+    <Content Include="Images\ICON1.JPG" />
+    <Content Include="Images\Import.gif" />
+    <Content Include="Images\Init.gif" />
+    <Content Include="Images\JointCount.gif" />
+    <Content Include="Images\layout-browser-hd-bg.gif" />
+    <Content Include="Images\layout-icon.gif" />
+    <Content Include="Images\left.jpg" />
+    <Content Include="Images\LeftBg.png" />
+    <Content Include="Images\LeftBotton.jpg" />
+    <Content Include="Images\LeftCenter.jpg" />
+    <Content Include="Images\LeftTop.jpg" />
+    <Content Include="Images\LoginHSSE.jpg" />
+    <Content Include="Images\lv-1.gif" />
+    <Content Include="Images\ModifyWbs.gif" />
+    <Content Include="Images\modybutton.gif" />
+    <Content Include="Images\navigation.gif" />
+    <Content Include="Images\Openbook.png" />
+    <Content Include="Images\Organization.gif" />
+    <Content Include="Images\PageSetup.gif" />
+    <Content Include="Images\Print.gif" />
+    <Content Include="Images\Print1.gif" />
+    <Content Include="Images\PrintPreview.gif" />
+    <Content Include="Images\PrintSetup.gif" />
+    <Content Include="Images\RegeditBtn.jpg" />
+    <Content Include="Images\Return.gif" />
+    <Content Include="Images\savebutton.gif" />
+    <Content Include="Images\Search.gif" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\Select.jpg" />
+    <Content Include="Images\SelectBtn.gif" />
+    <Content Include="Images\sendcard.jpg" />
+    <Content Include="Images\SINOPEC.gif" />
+    <Content Include="Images\SINOPEC_BG.gif" />
+    <Content Include="Images\spotCheckBtn.jpg" />
+    <Content Include="Images\Statistics.gif" />
+    <Content Include="Images\Submit.gif" />
+    <Content Include="Images\sure.gif" />
+    <Content Include="Images\Template.gif" />
+    <Content Include="Images\Temple.gif" />
+    <Content Include="Images\TH_BG.JPG" />
+    <Content Include="Images\TOP-BG.JPG" />
+    <Content Include="Images\wrong.jpg" />
+    <Content Include="Images\XPMENU.JS" />
+    <Content Include="Images\ZXAN.GIF" />
+    <Content Include="index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOff.aspx" />
+    <Content Include="MaterialManage\ElectrodeBakeRecord.aspx" />
+    <Content Include="MaterialManage\ElectrodeBakeRecordEdit.aspx" />
+    <Content Include="MaterialManage\ElectrodeBakeRecordPrint.aspx" />
+    <Content Include="MaterialManage\ElectrodeRecovery.aspx" />
+    <Content Include="MaterialManage\ElectrodeRecoveryEdit.aspx" />
+    <Content Include="MaterialManage\ElectrodeRecoveryPrint.aspx" />
+    <Content Include="MaterialManage\EMaterialRegist.aspx" />
+    <Content Include="MaterialManage\EMaterialRegistEdit.aspx" />
+    <Content Include="MaterialManage\EMaterialRegistPrint.aspx" />
+    <Content Include="MaterialManage\EWeldRHRecord.aspx" />
+    <Content Include="MaterialManage\EWeldRHRecordEdit.aspx" />
+    <Content Include="MaterialManage\EWeldRHRecordPrint.aspx" />
+    <Content Include="MaterialManage\MaterialMain.aspx" />
+    <Content Include="PersonManage\WelderScoreEdit.aspx" />
+    <Content Include="SysManage\ErrLogInfoItem.aspx" />
+    <Content Include="SysManage\SysSet.aspx" />
+    <Content Include="OperationError.aspx" />
+    <Content Include="PersonManage\PersonItem.aspx" />
+    <Content Include="PersonManage\PersonManage.aspx" />
+    <Content Include="PersonManage\PersonManageMain.aspx" />
+    <Content Include="PersonManage\PersonSave.aspx" />
+    <Content Include="PersonManage\TeamGroup.aspx" />
+    <Content Include="RepairManage\RepairManageAudit.aspx" />
+    <Content Include="RepairManage\RepairManageEdit.aspx" />
+    <Content Include="RepairManage\RepairManageMain.aspx" />
+    <Content Include="RepairManage\ShowRepairSearch.aspx" />
+    <Content Include="ReportPrint\CalculateChinaEx.aspx" />
+    <Content Include="ReportPrint\css\chinaexcel.css" />
+    <Content Include="ReportPrint\ExPrintSet.aspx" />
+    <Content Include="ReportPrint\ExReportPrint.aspx" />
+    <Content Include="ReportPrint\images\about.gif" />
+    <Content Include="ReportPrint\images\alignbottom.gif" />
+    <Content Include="ReportPrint\images\aligncenter.gif" />
+    <Content Include="ReportPrint\images\alignleft.gif" />
+    <Content Include="ReportPrint\images\alignmiddle.gif" />
+    <Content Include="ReportPrint\images\alignright.gif" />
+    <Content Include="ReportPrint\images\aligntop.gif" />
+    <Content Include="ReportPrint\images\backcolor.gif" />
+    <Content Include="ReportPrint\images\bold.gif" />
+    <Content Include="ReportPrint\images\border.gif" />
+    <Content Include="ReportPrint\images\calculateall.gif" />
+    <Content Include="ReportPrint\images\cellstyle.gif" />
+    <Content Include="ReportPrint\images\chartw.gif" />
+    <Content Include="ReportPrint\images\collabel.gif" />
+    <Content Include="ReportPrint\images\copy.gif" />
+    <Content Include="ReportPrint\images\currency.gif" />
+    <Content Include="ReportPrint\images\cut.gif" />
+    <Content Include="ReportPrint\images\databasewizard.gif" />
+    <Content Include="ReportPrint\images\deletecell.gif" />
+    <Content Include="ReportPrint\images\deletecol.gif" />
+    <Content Include="ReportPrint\images\deleterow.gif" />
+    <Content Include="ReportPrint\images\desgin.gif" />
+    <Content Include="ReportPrint\images\erase.gif" />
+    <Content Include="ReportPrint\images\export.gif" />
+    <Content Include="ReportPrint\images\finance.gif" />
+    <Content Include="ReportPrint\images\financeheader.gif" />
+    <Content Include="ReportPrint\images\find.gif" />
+    <Content Include="ReportPrint\images\forecolor.gif" />
+    <Content Include="ReportPrint\images\formprotect.gif" />
+    <Content Include="ReportPrint\images\formula.gif" />
+    <Content Include="ReportPrint\images\formulaS.gif" />
+    <Content Include="ReportPrint\images\gridline.gif" />
+    <Content Include="ReportPrint\images\header.gif" />
+    <Content Include="ReportPrint\images\hyperlink.gif" />
+    <Content Include="ReportPrint\images\insertcell.gif" />
+    <Content Include="ReportPrint\images\insertcellpic.gif" />
+    <Content Include="ReportPrint\images\insertcol.gif" />
+    <Content Include="ReportPrint\images\insertpic.gif" />
+    <Content Include="ReportPrint\images\insertrow.gif" />
+    <Content Include="ReportPrint\images\italic.gif" />
+    <Content Include="ReportPrint\images\mergecell.gif" />
+    <Content Include="ReportPrint\images\new.gif" />
+    <Content Include="ReportPrint\images\open.gif" />
+    <Content Include="ReportPrint\images\openweb.gif" />
+    <Content Include="ReportPrint\images\openwebxml.gif" />
+    <Content Include="ReportPrint\images\paste.gif" />
+    <Content Include="ReportPrint\images\percent.gif" />
+    <Content Include="ReportPrint\images\print.gif" />
+    <Content Include="ReportPrint\images\printpapaerset.gif" />
+    <Content Include="ReportPrint\images\printpaperset.gif" />
+    <Content Include="ReportPrint\images\printpreview.gif" />
+    <Content Include="ReportPrint\images\printsetup.gif" />
+    <Content Include="ReportPrint\images\readonly.gif" />
+    <Content Include="ReportPrint\images\redo.gif" />
+    <Content Include="ReportPrint\images\return.gif" />
+    <Content Include="ReportPrint\images\rowlabel.gif" />
+    <Content Include="ReportPrint\images\save.gif" />
+    <Content Include="ReportPrint\images\savexml.gif" />
+    <Content Include="ReportPrint\images\shape3D.gif" />
+    <Content Include="ReportPrint\images\sheetsize.gif" />
+    <Content Include="ReportPrint\images\slashset.gif" />
+    <Content Include="ReportPrint\images\sum.gif" />
+    <Content Include="ReportPrint\images\sumh.gif" />
+    <Content Include="ReportPrint\images\sumv.gif" />
+    <Content Include="ReportPrint\images\test.gif" />
+    <Content Include="ReportPrint\images\thousand.gif" />
+    <Content Include="ReportPrint\images\underline.gif" />
+    <Content Include="ReportPrint\images\undo.gif" />
+    <Content Include="ReportPrint\images\unmergecell.gif" />
+    <Content Include="ReportPrint\images\wordwrap.gif" />
+    <Content Include="ReportPrint\images\xmlfileopen.gif" />
+    <Content Include="ReportPrint\js\Common.js" />
+    <Content Include="ReportPrint\js\functions.vbs" />
+    <Content Include="ReportPrint\js\Object.js" />
+    <Content Include="ReportPrint\PrintDesigner.aspx" />
+    <Content Include="ReportPrint\ReadExReportFile.aspx" />
+    <Content Include="ReportPrint\ReportPrintMain.aspx" />
+    <Content Include="ReportPrint\SaveTabFile.aspx" />
+    <Content Include="Scripts\inputAutocomplete.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <None Include="ceuser\ceuser.dat" />
+    <None Include="Ext\icons\fam\Thumbs.db" />
+    <None Include="Ext\icons\Thumbs.db" />
+    <None Include="Ext\resources\images\default\box\Thumbs.db" />
+    <None Include="Ext\resources\images\default\button\Thumbs.db" />
+    <None Include="Ext\resources\images\default\dd\Thumbs.db" />
+    <None Include="Ext\resources\images\default\editor\Thumbs.db" />
+    <None Include="Ext\resources\images\default\form\clear-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\date-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\search-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\Thumbs.db" />
+    <None Include="Ext\resources\images\default\form\trigger.psd" />
+    <None Include="Ext\resources\images\default\grid\Thumbs.db" />
+    <None Include="Ext\resources\images\default\layout\Thumbs.db" />
+    <None Include="Ext\resources\images\default\menu\Thumbs.db" />
+    <None Include="Ext\resources\images\default\panel\Thumbs.db" />
+    <None Include="Ext\resources\images\default\qtip\Thumbs.db" />
+    <None Include="Ext\resources\images\default\shared\Thumbs.db" />
+    <None Include="Ext\resources\images\default\sizer\Thumbs.db" />
+    <None Include="Ext\resources\images\default\slider\Thumbs.db" />
+    <None Include="Ext\resources\images\default\tabs\Thumbs.db" />
+    <None Include="Ext\resources\images\default\toolbar\Thumbs.db" />
+    <None Include="Ext\resources\images\default\window\left-corners.psd" />
+    <None Include="Ext\resources\images\default\window\left-right.psd" />
+    <None Include="Ext\resources\images\default\window\right-corners.psd" />
+    <None Include="Ext\resources\images\default\window\Thumbs.db" />
+    <None Include="Ext\resources\images\default\window\top-bottom.psd" />
+    <None Include="Ext\resources\images\gray\window\left-corners.pspimage" />
+    <None Include="Ext\resources\resources.jsb" />
+    <None Include="ReportPrint\ReportTabFile\无损检测委托单.tab" />
+    <None Include="ReportPrint\ReportTabFile\无损检测结果通知单.tab" />
+    <None Include="ReportPrint\ReportTabFile\管道点口日报表.tab" />
+    <None Include="ReportPrint\ReportTabFile\管道焊口日报表.tab" />
+    <None Include="ReportPrint\ReportTabFile\管道焊接工作记录.tab" />
+    <None Include="Service References\HSSEService\HSSEService.disco" />
+    <None Include="Service References\HSSEService\configuration91.svcinfo" />
+    <None Include="Service References\HSSEService\configuration.svcinfo" />
+    <None Include="Service References\HSSEService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\ValidateGroupControl.js" />
+    <Content Include="SoftRegedit.aspx" />
+    <Content Include="Styles\jquery.autocomplete.css" />
+    <Content Include="Styles\Style.css" />
+    <Content Include="Styles\StyleSheet.css" />
+    <Content Include="SysManage\ButtonToMenu.aspx" />
+    <Content Include="SysManage\DataBak.aspx" />
+    <Content Include="SysManage\DownLoad.aspx" />
+    <Content Include="SysManage\LogList.aspx" />
+    <Content Include="SysManage\RoleList.aspx" />
+    <Content Include="SysManage\RolePower.aspx" />
+    <Content Include="SysManage\SysMain.aspx" />
+    <Content Include="SysManage\UpdatePassword.aspx" />
+    <Content Include="SysManage\UserList.aspx" />
+    <Content Include="SysManage\ErrLogInfo.aspx" />
+    <Content Include="TestPackageManage\AItemEndCheck.aspx" />
+    <Content Include="TestPackageManage\BItemEndCheck.aspx" />
+    <Content Include="TestPackageManage\ShowJointInfoView.aspx" />
+    <Content Include="TestPackageManage\ShowTestPackageSearch.aspx" />
+    <Content Include="TestPackageManage\TestPackageManageAudit.aspx" />
+    <Content Include="TestPackageManage\TestPackageManageEdit.aspx" />
+    <Content Include="TestPackageManage\TestPackageManageMain.aspx" />
+    <Content Include="TestPackageManage\TestPackageManageView.aspx" />
+    <Content Include="TrustManage\ShowTrustItem.aspx" />
+    <Content Include="TrustManage\ShowTrustSearch.aspx" />
+    <Content Include="TrustManage\TrustManageAudit.aspx" />
+    <Content Include="TrustManage\TrustManageEdit.aspx" />
+    <Content Include="TrustManage\TrustManageMain.aspx" />
+    <Content Include="TrustManage\TrustManageSet.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="weboffice.ocx" />
+    <Content Include="WebOffice\sec.jpg" />
+    <Content Include="WebOffice\uploadedit.aspx" />
+    <Content Include="WebOffice\WebDocEdit.aspx" />
+    <Content Include="WebOffice\weboffice.js" />
+    <Content Include="WebOffice\weboffice.ocx" />
+    <Content Include="WebOffice\writefile.aspx" />
+    <Content Include="WeldingManage\EditPipeline.aspx" />
+    <Content Include="WeldingManage\EditWeldReport.aspx" />
+    <Content Include="WeldingManage\JointInfo.aspx" />
+    <Content Include="WeldingManage\JointInfoBatchEdit.aspx" />
+    <Content Include="WeldingManage\JointInfoEdit.aspx" />
+    <Content Include="WeldingManage\JointInfoSearch.aspx" />
+    <Content Include="WeldingManage\JointInfoShowColumn.aspx" />
+    <Content Include="WeldingManage\PipelineManage.aspx" />
+    <Content Include="WeldingManage\PointManage.aspx" />
+    <Content Include="WeldingManage\PointShowSearch.aspx" />
+    <Content Include="WeldingManage\ProcedureImageEdit.aspx" />
+    <Content Include="WeldingManage\ProcedureImageList.aspx" />
+    <Content Include="WeldingManage\ShowColumn.aspx" />
+    <Content Include="WeldingManage\ShowPerson.aspx" />
+    <Content Include="WeldingManage\ShowPointItem.aspx" />
+    <Content Include="WeldingManage\ShowProcedureSearch.aspx" />
+    <Content Include="WeldingManage\ShowProduce.aspx" />
+    <Content Include="WeldingManage\ShowProduceReport.aspx" />
+    <Content Include="WeldingManage\ShowReportSearch.aspx" />
+    <Content Include="WeldingManage\ShowSearch.aspx" />
+    <Content Include="WeldingManage\WeldingManageMain.aspx" />
+    <Content Include="WeldingManage\WeldingProcedureMain.aspx" />
+    <Content Include="WeldingManage\WeldingProcedurePQR.aspx" />
+    <Content Include="WeldingManage\WeldingProcedurePQREdit.aspx" />
+    <Content Include="WeldingManage\WeldingProcedurePrint.aspx" />
+    <Content Include="WeldingManage\WeldingProcedureSearch.aspx" />
+    <Content Include="WeldingManage\WeldReport.aspx" />
+    <Content Include="WeldingManage\ShowReportExport.aspx" />
+    <Content Include="WeldingManage\WeldReportDataIn.aspx" />
+    <Content Include="WeldingReport\DetectionAnalyze.aspx" />
+    <Content Include="WeldingReport\IsoCmprehensive.aspx" />
+    <Content Include="WeldingReport\IsoCompreInfo.aspx" />
+    <Content Include="WeldingReport\JointComprehensive.aspx" />
+    <Content Include="WeldingReport\MediaComprehensive.aspx" />
+    <Content Include="WeldingReport\PrefabricatedInstall.aspx" />
+    <Content Include="WeldingReport\TrustCheck.aspx" />
+    <Content Include="WeldingReport\UnitWorkareaAnalyze.aspx" />
+    <Content Include="WeldingReport\UnitWorkAreaQuality.aspx" />
+    <Content Include="WeldingReport\WelderPerformance.aspx" />
+    <Content Include="WeldingReport\WeldingReportMain.aspx" />
+    <Content Include="Wrong.aspx" />
+    <None Include="Service References\HSSEService\HSSEService.wsdl" />
+    <None Include="Service References\HSSEService\HSSEService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HSSEService\HSSEService1.wsdl" />
+    <None Include="Service References\HSSEService\HSSEService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HSSEService\HSSEService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HSSEService\HSSEService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HSSEService\Web.HSSEService.FileStruct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ajax.aspx.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ajax.aspx.designer.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\BaseInfoMain.aspx.cs">
+      <DependentUpon>BaseInfoMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\BaseInfoMain.aspx.designer.cs">
+      <DependentUpon>BaseInfoMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Components.aspx.cs">
+      <DependentUpon>Components.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Components.aspx.designer.cs">
+      <DependentUpon>Components.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Control.aspx.cs">
+      <DependentUpon>Control.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Control.aspx.designer.cs">
+      <DependentUpon>Control.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Detection.aspx.cs">
+      <DependentUpon>Detection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Detection.aspx.designer.cs">
+      <DependentUpon>Detection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Groove.aspx.cs">
+      <DependentUpon>Groove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Groove.aspx.designer.cs">
+      <DependentUpon>Groove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Installation.aspx.cs">
+      <DependentUpon>Installation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Installation.aspx.designer.cs">
+      <DependentUpon>Installation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Material.aspx.cs">
+      <DependentUpon>Material.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Material.aspx.designer.cs">
+      <DependentUpon>Material.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Medium.aspx.cs">
+      <DependentUpon>Medium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Medium.aspx.designer.cs">
+      <DependentUpon>Medium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\PipingClass.aspx.cs">
+      <DependentUpon>PipingClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\PipingClass.aspx.designer.cs">
+      <DependentUpon>PipingClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Pressure.aspx.cs">
+      <DependentUpon>Pressure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Pressure.aspx.designer.cs">
+      <DependentUpon>Pressure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Project.aspx.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Project.aspx.designer.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Unit.aspx.cs">
+      <DependentUpon>Unit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Unit.aspx.designer.cs">
+      <DependentUpon>Unit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Weld.aspx.cs">
+      <DependentUpon>Weld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Weld.aspx.designer.cs">
+      <DependentUpon>Weld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\WeldingMethod.aspx.cs">
+      <DependentUpon>WeldingMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\WeldingMethod.aspx.designer.cs">
+      <DependentUpon>WeldingMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\WorkArea.aspx.cs">
+      <DependentUpon>WorkArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\WorkArea.aspx.designer.cs">
+      <DependentUpon>WorkArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\Consumables.aspx.cs">
+      <DependentUpon>Consumables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\Consumables.aspx.designer.cs">
+      <DependentUpon>Consumables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckManage\CheckManage.aspx.cs">
+      <DependentUpon>CheckManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckManage\CheckManage.aspx.designer.cs">
+      <DependentUpon>CheckManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckManage\CheckManageAudit.aspx.cs">
+      <DependentUpon>CheckManageAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckManage\CheckManageAudit.aspx.designer.cs">
+      <DependentUpon>CheckManageAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckManage\CheckManageMain.aspx.cs">
+      <DependentUpon>CheckManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckManage\CheckManageMain.aspx.designer.cs">
+      <DependentUpon>CheckManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckManage\ShowTrust.aspx.cs">
+      <DependentUpon>ShowTrust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckManage\ShowTrust.aspx.designer.cs">
+      <DependentUpon>ShowTrust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChartControl.ascx.cs">
+      <DependentUpon>ChartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ChartControl.ascx.designer.cs">
+      <DependentUpon>ChartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClientJs\ClientJs.ascx.cs">
+      <DependentUpon>ClientJs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ClientJs\ClientJs.ascx.designer.cs">
+      <DependentUpon>ClientJs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridNavgator.ascx.cs">
+      <DependentUpon>GridNavgator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridNavgator.ascx.designer.cs">
+      <DependentUpon>GridNavgator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataIn.aspx.cs">
+      <DependentUpon>DataIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataIn.aspx.designer.cs">
+      <DependentUpon>DataIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataInMain.aspx.cs">
+      <DependentUpon>DataInMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataInMain.aspx.designer.cs">
+      <DependentUpon>DataInMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataUpdate.aspx.cs">
+      <DependentUpon>DataUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataUpdate.aspx.designer.cs">
+      <DependentUpon>DataUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataInTableEdit.aspx.cs">
+      <DependentUpon>DataInTableEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataInTableEdit.aspx.designer.cs">
+      <DependentUpon>DataInTableEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBar.aspx.cs">
+      <DependentUpon>ProgressBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBar.aspx.designer.cs">
+      <DependentUpon>ProgressBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarIn.aspx.cs">
+      <DependentUpon>ProgressBarIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarIn.aspx.designer.cs">
+      <DependentUpon>ProgressBarIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarSave.aspx.cs">
+      <DependentUpon>ProgressBarSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarSave.aspx.designer.cs">
+      <DependentUpon>ProgressBarSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdate.aspx.cs">
+      <DependentUpon>ProgressBarUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdate.aspx.designer.cs">
+      <DependentUpon>ProgressBarUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdateIn.aspx.cs">
+      <DependentUpon>ProgressBarUpdateIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdateIn.aspx.designer.cs">
+      <DependentUpon>ProgressBarUpdateIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdateSave.aspx.cs">
+      <DependentUpon>ProgressBarUpdateSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\ProgressBarUpdateSave.aspx.designer.cs">
+      <DependentUpon>ProgressBarUpdateSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataInTable.aspx.cs">
+      <DependentUpon>DataInTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataInTable.aspx.designer.cs">
+      <DependentUpon>DataInTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataIn\DataInTableProgressBar.aspx.cs">
+      <DependentUpon>DataInTableProgressBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataIn\DataInTableProgressBar.aspx.designer.cs">
+      <DependentUpon>DataInTableProgressBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop.aspx.cs">
+      <DependentUpon>Desktop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Desktop.aspx.designer.cs">
+      <DependentUpon>Desktop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageAudit.aspx.cs">
+      <DependentUpon>HotHardManageAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageAudit.aspx.designer.cs">
+      <DependentUpon>HotHardManageAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageEdit.aspx.cs">
+      <DependentUpon>HotHardManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageEdit.aspx.designer.cs">
+      <DependentUpon>HotHardManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageMain.aspx.cs">
+      <DependentUpon>HotHardManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotHardManage\HotHardManageMain.aspx.designer.cs">
+      <DependentUpon>HotHardManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotHardManage\ShowHotHardSearch.aspx.cs">
+      <DependentUpon>ShowHotHardSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotHardManage\ShowHotHardSearch.aspx.designer.cs">
+      <DependentUpon>ShowHotHardSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotProessManage\HotProessManageEdit.aspx.cs">
+      <DependentUpon>HotProessManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotProessManage\HotProessManageEdit.aspx.designer.cs">
+      <DependentUpon>HotProessManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotProessManage\HotProessManageMain.aspx.cs">
+      <DependentUpon>HotProessManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotProessManage\HotProessManageMain.aspx.designer.cs">
+      <DependentUpon>HotProessManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotProessManage\ShowHotProessSearch.aspx.cs">
+      <DependentUpon>ShowHotProessSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotProessManage\ShowHotProessSearch.aspx.designer.cs">
+      <DependentUpon>ShowHotProessSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecord.aspx.cs">
+      <DependentUpon>ElectrodeBakeRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecord.aspx.designer.cs">
+      <DependentUpon>ElectrodeBakeRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecordEdit.aspx.cs">
+      <DependentUpon>ElectrodeBakeRecordEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecordEdit.aspx.designer.cs">
+      <DependentUpon>ElectrodeBakeRecordEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecordPrint.aspx.cs">
+      <DependentUpon>ElectrodeBakeRecordPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeBakeRecordPrint.aspx.designer.cs">
+      <DependentUpon>ElectrodeBakeRecordPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecovery.aspx.cs">
+      <DependentUpon>ElectrodeRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecovery.aspx.designer.cs">
+      <DependentUpon>ElectrodeRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecoveryEdit.aspx.cs">
+      <DependentUpon>ElectrodeRecoveryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecoveryEdit.aspx.designer.cs">
+      <DependentUpon>ElectrodeRecoveryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecoveryPrint.aspx.cs">
+      <DependentUpon>ElectrodeRecoveryPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\ElectrodeRecoveryPrint.aspx.designer.cs">
+      <DependentUpon>ElectrodeRecoveryPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegist.aspx.cs">
+      <DependentUpon>EMaterialRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegist.aspx.designer.cs">
+      <DependentUpon>EMaterialRegist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegistEdit.aspx.cs">
+      <DependentUpon>EMaterialRegistEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegistEdit.aspx.designer.cs">
+      <DependentUpon>EMaterialRegistEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegistPrint.aspx.cs">
+      <DependentUpon>EMaterialRegistPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EMaterialRegistPrint.aspx.designer.cs">
+      <DependentUpon>EMaterialRegistPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecord.aspx.cs">
+      <DependentUpon>EWeldRHRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecord.aspx.designer.cs">
+      <DependentUpon>EWeldRHRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecordEdit.aspx.cs">
+      <DependentUpon>EWeldRHRecordEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecordEdit.aspx.designer.cs">
+      <DependentUpon>EWeldRHRecordEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecordPrint.aspx.cs">
+      <DependentUpon>EWeldRHRecordPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\EWeldRHRecordPrint.aspx.designer.cs">
+      <DependentUpon>EWeldRHRecordPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialManage\MaterialMain.aspx.cs">
+      <DependentUpon>MaterialMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialManage\MaterialMain.aspx.designer.cs">
+      <DependentUpon>MaterialMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\WelderScoreEdit.aspx.cs">
+      <DependentUpon>WelderScoreEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\WelderScoreEdit.aspx.designer.cs">
+      <DependentUpon>WelderScoreEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\ErrLogInfoItem.aspx.cs">
+      <DependentUpon>ErrLogInfoItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\ErrLogInfoItem.aspx.designer.cs">
+      <DependentUpon>ErrLogInfoItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\SysSet.aspx.cs">
+      <DependentUpon>SysSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\SysSet.aspx.designer.cs">
+      <DependentUpon>SysSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationError.aspx.cs">
+      <DependentUpon>OperationError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationError.aspx.designer.cs">
+      <DependentUpon>OperationError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\PersonItem.aspx.cs">
+      <DependentUpon>PersonItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\PersonItem.aspx.designer.cs">
+      <DependentUpon>PersonItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\PersonManage.aspx.cs">
+      <DependentUpon>PersonManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\PersonManage.aspx.designer.cs">
+      <DependentUpon>PersonManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\PersonManageMain.aspx.cs">
+      <DependentUpon>PersonManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\PersonManageMain.aspx.designer.cs">
+      <DependentUpon>PersonManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\PersonSave.aspx.cs">
+      <DependentUpon>PersonSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\PersonSave.aspx.designer.cs">
+      <DependentUpon>PersonSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonManage\TeamGroup.aspx.cs">
+      <DependentUpon>TeamGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonManage\TeamGroup.aspx.designer.cs">
+      <DependentUpon>TeamGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepairManage\RepairManageAudit.aspx.cs">
+      <DependentUpon>RepairManageAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairManage\RepairManageAudit.aspx.designer.cs">
+      <DependentUpon>RepairManageAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairManage\RepairManageEdit.aspx.cs">
+      <DependentUpon>RepairManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairManage\RepairManageEdit.aspx.designer.cs">
+      <DependentUpon>RepairManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairManage\RepairManageMain.aspx.cs">
+      <DependentUpon>RepairManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairManage\RepairManageMain.aspx.designer.cs">
+      <DependentUpon>RepairManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairManage\ShowRepairSearch.aspx.cs">
+      <DependentUpon>ShowRepairSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairManage\ShowRepairSearch.aspx.designer.cs">
+      <DependentUpon>ShowRepairSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\CalculateChinaEx.aspx.cs">
+      <DependentUpon>CalculateChinaEx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\CalculateChinaEx.aspx.designer.cs">
+      <DependentUpon>CalculateChinaEx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\ExPrintSet.aspx.cs">
+      <DependentUpon>ExPrintSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\ExPrintSet.aspx.designer.cs">
+      <DependentUpon>ExPrintSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\ExReportPrint.aspx.cs">
+      <DependentUpon>ExReportPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\ExReportPrint.aspx.designer.cs">
+      <DependentUpon>ExReportPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\PrintDesigner.aspx.cs">
+      <DependentUpon>PrintDesigner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\PrintDesigner.aspx.designer.cs">
+      <DependentUpon>PrintDesigner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\ReadExReportFile.aspx.cs">
+      <DependentUpon>ReadExReportFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\ReadExReportFile.aspx.designer.cs">
+      <DependentUpon>ReadExReportFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\ReportPrintMain.aspx.cs">
+      <DependentUpon>ReportPrintMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\ReportPrintMain.aspx.designer.cs">
+      <DependentUpon>ReportPrintMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\SaveTabFile.aspx.cs">
+      <DependentUpon>SaveTabFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\SaveTabFile.aspx.designer.cs">
+      <DependentUpon>SaveTabFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HSSEService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProxy.cs" />
+    <Compile Include="SoftRegedit.aspx.cs">
+      <DependentUpon>SoftRegedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftRegedit.aspx.designer.cs">
+      <DependentUpon>SoftRegedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\ButtonToMenu.aspx.cs">
+      <DependentUpon>ButtonToMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\ButtonToMenu.aspx.designer.cs">
+      <DependentUpon>ButtonToMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\DataBak.aspx.cs">
+      <DependentUpon>DataBak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\DataBak.aspx.designer.cs">
+      <DependentUpon>DataBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\DownLoad.aspx.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\DownLoad.aspx.designer.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\LogList.aspx.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\LogList.aspx.designer.cs">
+      <DependentUpon>LogList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\RoleList.aspx.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\RoleList.aspx.designer.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\RolePower.aspx.cs">
+      <DependentUpon>RolePower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\RolePower.aspx.designer.cs">
+      <DependentUpon>RolePower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\SysMain.aspx.cs">
+      <DependentUpon>SysMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\SysMain.aspx.designer.cs">
+      <DependentUpon>SysMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysManage\ErrLogInfo.aspx.cs">
+      <DependentUpon>ErrLogInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysManage\ErrLogInfo.aspx.designer.cs">
+      <DependentUpon>ErrLogInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\AItemEndCheck.aspx.cs">
+      <DependentUpon>AItemEndCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\AItemEndCheck.aspx.designer.cs">
+      <DependentUpon>AItemEndCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\BItemEndCheck.aspx.cs">
+      <DependentUpon>BItemEndCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\BItemEndCheck.aspx.designer.cs">
+      <DependentUpon>BItemEndCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\ShowJointInfoView.aspx.cs">
+      <DependentUpon>ShowJointInfoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\ShowJointInfoView.aspx.designer.cs">
+      <DependentUpon>ShowJointInfoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\ShowTestPackageSearch.aspx.cs">
+      <DependentUpon>ShowTestPackageSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\ShowTestPackageSearch.aspx.designer.cs">
+      <DependentUpon>ShowTestPackageSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageAudit.aspx.cs">
+      <DependentUpon>TestPackageManageAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageAudit.aspx.designer.cs">
+      <DependentUpon>TestPackageManageAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageEdit.aspx.cs">
+      <DependentUpon>TestPackageManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageEdit.aspx.designer.cs">
+      <DependentUpon>TestPackageManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageMain.aspx.cs">
+      <DependentUpon>TestPackageManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageMain.aspx.designer.cs">
+      <DependentUpon>TestPackageManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageView.aspx.cs">
+      <DependentUpon>TestPackageManageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackageManageView.aspx.designer.cs">
+      <DependentUpon>TestPackageManageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\ShowTrustItem.aspx.cs">
+      <DependentUpon>ShowTrustItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\ShowTrustItem.aspx.designer.cs">
+      <DependentUpon>ShowTrustItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\ShowTrustSearch.aspx.cs">
+      <DependentUpon>ShowTrustSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\ShowTrustSearch.aspx.designer.cs">
+      <DependentUpon>ShowTrustSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageAudit.aspx.cs">
+      <DependentUpon>TrustManageAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageAudit.aspx.designer.cs">
+      <DependentUpon>TrustManageAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageEdit.aspx.cs">
+      <DependentUpon>TrustManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageEdit.aspx.designer.cs">
+      <DependentUpon>TrustManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageMain.aspx.cs">
+      <DependentUpon>TrustManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageMain.aspx.designer.cs">
+      <DependentUpon>TrustManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageSet.aspx.cs">
+      <DependentUpon>TrustManageSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrustManage\TrustManageSet.aspx.designer.cs">
+      <DependentUpon>TrustManageSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\EditPipeline.aspx.cs">
+      <DependentUpon>EditPipeline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\EditPipeline.aspx.designer.cs">
+      <DependentUpon>EditPipeline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\EditWeldReport.aspx.cs">
+      <DependentUpon>EditWeldReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\EditWeldReport.aspx.designer.cs">
+      <DependentUpon>EditWeldReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfo.aspx.cs">
+      <DependentUpon>JointInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfo.aspx.designer.cs">
+      <DependentUpon>JointInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoBatchEdit.aspx.cs">
+      <DependentUpon>JointInfoBatchEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoBatchEdit.aspx.designer.cs">
+      <DependentUpon>JointInfoBatchEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoEdit.aspx.cs">
+      <DependentUpon>JointInfoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoEdit.aspx.designer.cs">
+      <DependentUpon>JointInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoSearch.aspx.cs">
+      <DependentUpon>JointInfoSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoSearch.aspx.designer.cs">
+      <DependentUpon>JointInfoSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoShowColumn.aspx.cs">
+      <DependentUpon>JointInfoShowColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\JointInfoShowColumn.aspx.designer.cs">
+      <DependentUpon>JointInfoShowColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\PipelineManage.aspx.cs">
+      <DependentUpon>PipelineManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\PipelineManage.aspx.designer.cs">
+      <DependentUpon>PipelineManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\PointManage.aspx.cs">
+      <DependentUpon>PointManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\PointManage.aspx.designer.cs">
+      <DependentUpon>PointManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\PointShowSearch.aspx.cs">
+      <DependentUpon>PointShowSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\PointShowSearch.aspx.designer.cs">
+      <DependentUpon>PointShowSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ProcedureImageEdit.aspx.cs">
+      <DependentUpon>ProcedureImageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ProcedureImageEdit.aspx.designer.cs">
+      <DependentUpon>ProcedureImageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ProcedureImageList.aspx.cs">
+      <DependentUpon>ProcedureImageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ProcedureImageList.aspx.designer.cs">
+      <DependentUpon>ProcedureImageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowColumn.aspx.cs">
+      <DependentUpon>ShowColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowColumn.aspx.designer.cs">
+      <DependentUpon>ShowColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowPerson.aspx.cs">
+      <DependentUpon>ShowPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowPerson.aspx.designer.cs">
+      <DependentUpon>ShowPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowPointItem.aspx.cs">
+      <DependentUpon>ShowPointItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowPointItem.aspx.designer.cs">
+      <DependentUpon>ShowPointItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProcedureSearch.aspx.cs">
+      <DependentUpon>ShowProcedureSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProcedureSearch.aspx.designer.cs">
+      <DependentUpon>ShowProcedureSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProduce.aspx.cs">
+      <DependentUpon>ShowProduce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProduce.aspx.designer.cs">
+      <DependentUpon>ShowProduce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProduceReport.aspx.cs">
+      <DependentUpon>ShowProduceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowProduceReport.aspx.designer.cs">
+      <DependentUpon>ShowProduceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowReportSearch.aspx.cs">
+      <DependentUpon>ShowReportSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowReportSearch.aspx.designer.cs">
+      <DependentUpon>ShowReportSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowSearch.aspx.cs">
+      <DependentUpon>ShowSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowSearch.aspx.designer.cs">
+      <DependentUpon>ShowSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingManageMain.aspx.cs">
+      <DependentUpon>WeldingManageMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingManageMain.aspx.designer.cs">
+      <DependentUpon>WeldingManageMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedureMain.aspx.cs">
+      <DependentUpon>WeldingProcedureMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedureMain.aspx.designer.cs">
+      <DependentUpon>WeldingProcedureMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePQR.aspx.cs">
+      <DependentUpon>WeldingProcedurePQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePQR.aspx.designer.cs">
+      <DependentUpon>WeldingProcedurePQR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePQREdit.aspx.cs">
+      <DependentUpon>WeldingProcedurePQREdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePQREdit.aspx.designer.cs">
+      <DependentUpon>WeldingProcedurePQREdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePrint.aspx.cs">
+      <DependentUpon>WeldingProcedurePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedurePrint.aspx.designer.cs">
+      <DependentUpon>WeldingProcedurePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedureSearch.aspx.cs">
+      <DependentUpon>WeldingProcedureSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldingProcedureSearch.aspx.designer.cs">
+      <DependentUpon>WeldingProcedureSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldReport.aspx.cs">
+      <DependentUpon>WeldReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldReport.aspx.designer.cs">
+      <DependentUpon>WeldReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\ShowReportExport.aspx.cs">
+      <DependentUpon>ShowReportExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\ShowReportExport.aspx.designer.cs">
+      <DependentUpon>ShowReportExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingManage\WeldReportDataIn.aspx.cs">
+      <DependentUpon>WeldReportDataIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingManage\WeldReportDataIn.aspx.designer.cs">
+      <DependentUpon>WeldReportDataIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\DetectionAnalyze.aspx.cs">
+      <DependentUpon>DetectionAnalyze.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\DetectionAnalyze.aspx.designer.cs">
+      <DependentUpon>DetectionAnalyze.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\IsoCmprehensive.aspx.cs">
+      <DependentUpon>IsoCmprehensive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\IsoCmprehensive.aspx.designer.cs">
+      <DependentUpon>IsoCmprehensive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\IsoCompreInfo.aspx.cs">
+      <DependentUpon>IsoCompreInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\IsoCompreInfo.aspx.designer.cs">
+      <DependentUpon>IsoCompreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\JointComprehensive.aspx.cs">
+      <DependentUpon>JointComprehensive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\JointComprehensive.aspx.designer.cs">
+      <DependentUpon>JointComprehensive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\MediaComprehensive.aspx.cs">
+      <DependentUpon>MediaComprehensive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\MediaComprehensive.aspx.designer.cs">
+      <DependentUpon>MediaComprehensive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\PrefabricatedInstall.aspx.cs">
+      <DependentUpon>PrefabricatedInstall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\PrefabricatedInstall.aspx.designer.cs">
+      <DependentUpon>PrefabricatedInstall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\TrustCheck.aspx.cs">
+      <DependentUpon>TrustCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\TrustCheck.aspx.designer.cs">
+      <DependentUpon>TrustCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\UnitWorkareaAnalyze.aspx.cs">
+      <DependentUpon>UnitWorkareaAnalyze.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\UnitWorkareaAnalyze.aspx.designer.cs">
+      <DependentUpon>UnitWorkareaAnalyze.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\UnitWorkAreaQuality.aspx.cs">
+      <DependentUpon>UnitWorkAreaQuality.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\UnitWorkAreaQuality.aspx.designer.cs">
+      <DependentUpon>UnitWorkAreaQuality.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\WelderPerformance.aspx.cs">
+      <DependentUpon>WelderPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\WelderPerformance.aspx.designer.cs">
+      <DependentUpon>WelderPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\WeldingReportMain.aspx.cs">
+      <DependentUpon>WeldingReportMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\WeldingReportMain.aspx.designer.cs">
+      <DependentUpon>WeldingReportMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wrong.aspx.cs">
+      <DependentUpon>Wrong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wrong.aspx.designer.cs">
+      <DependentUpon>Wrong.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Default\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{BBC7282A-9E2B-4BD6-9C6D-333CEFC6F332}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{FD1E1931-1688-4B4A-BCD6-335A81465343}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="aspnet_client\FreeTextBox\images\misc\buttonbackgrounds.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\Image-Normal.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\images\misc\ToolbarButton-Background.psd" />
+    <None Include="aspnet_client\FreeTextBox\images\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\office2000\subs\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\office2000\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeMac\Picasa.ini" />
+    <None Include="aspnet_client\FreeTextBox\officeMac\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\old\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\subs\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\officeXP\Thumbs.db" />
+    <None Include="aspnet_client\FreeTextBox\utility\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HSSEService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2729</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.scs.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HSSEService" targetNamespace="http://www.scs.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost/HSSEServer/HSSEService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.scs.com/Imports">
+      <xsd:import schemaLocation="http://localhost/HSSEServer/HSSEService.svc?xsd=xsd0" namespace="http://www.scs.com" />
+      <xsd:import schemaLocation="http://localhost/HSSEServer/HSSEService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/HSSEServer/HSSEService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BLL.OpenService" />
+      <xsd:import schemaLocation="http://localhost/HSSEServer/HSSEService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="HSSEService_GetNoticeAttach_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoticeAttach" />
+  </wsdl:message>
+  <wsdl:message name="HSSEService_GetNoticeAttach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoticeAttachResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSSEService_GetSubUnitAttach_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubUnitAttach" />
+  </wsdl:message>
+  <wsdl:message name="HSSEService_GetSubUnitAttach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubUnitAttachResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSSEService_GetFileReleaseAttach_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileReleaseAttach" />
+  </wsdl:message>
+  <wsdl:message name="HSSEService_GetFileReleaseAttach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileReleaseAttachResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HSSEService">
+    <wsdl:operation name="GetNoticeAttach">
+      <wsdl:input wsaw:Action="http://www.scs.com/HSSEService/GetNoticeAttach" message="tns:HSSEService_GetNoticeAttach_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.scs.com/HSSEService/GetNoticeAttachResponse" message="tns:HSSEService_GetNoticeAttach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnitAttach">
+      <wsdl:input wsaw:Action="http://www.scs.com/HSSEService/GetSubUnitAttach" message="tns:HSSEService_GetSubUnitAttach_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.scs.com/HSSEService/GetSubUnitAttachResponse" message="tns:HSSEService_GetSubUnitAttach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileReleaseAttach">
+      <wsdl:input wsaw:Action="http://www.scs.com/HSSEService/GetFileReleaseAttach" message="tns:HSSEService_GetFileReleaseAttach_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.scs.com/HSSEService/GetFileReleaseAttachResponse" message="tns:HSSEService_GetFileReleaseAttach_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="HSSEService">
+    <wsdl:port name="HSSEServiceEndpoint" binding="i0:HSSEServiceEndpoint">
+      <soap12:address location="http://localhost/HSSEServer/HSSEService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost/HSSEServer/HSSEService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
