@@ -1,28 +1,13 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BLL;
 
-namespace Web.WeldingReport
+namespace Web.TestPackageManage
 {
-    
-    public partial class IsoCmprehensive : PPage
-    {
-        /// <summary>
-        ///  按钮权限列表
-        /// </summary>
-        public string[] ButtonList
-        {
-            get
-            {
-                return (string[])ViewState["ButtonList"];
-            }
-            set 
-            {
-                ViewState["ButtonList"] = value;
-            }
-        }
 
+    public partial class TestPackagePipelineAnalysis : PPage
+    {
         public string Flag
         {
             get
@@ -48,37 +33,9 @@ namespace Web.WeldingReport
                 {
                     this.trProject.Visible = true;
                     Funs.PleaseSelect(this.drpProject);
-                    this.drpProject.Items.AddRange(BLL.ProjectService.GetProjectList());
-                }
-                string roleId = BLL.UserService.GetRoleIdByUserId(this.CurrUser.UserId);
-                ButtonList = BLL.ButtonPowerService.GetButtonPowerList(roleId, BLL.Const.IsoCmprehensiveMenuId);
+                    this.drpProject.Items.AddRange(ProjectService.GetProjectList());
+                }                            
                 
-                
-                Funs.PleaseSelect(ddlWorkArea);
-                var unit = BLL.UnitService.GetUnit(this.CurrUser.UnitId);
-                if (unit != null && unit.UnitType == "2")
-                {
-                    this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameList(this.CurrUser.ProjectId, this.CurrUser.UnitId));
-                    this.ddlUnit.SelectedValue = this.CurrUser.UnitId;
-                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.CurrUser.ProjectId, this.CurrUser.UnitId));
-                }
-                else
-                {
-                    Funs.PleaseSelect(ddlUnit);
-                    if (BLL.WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
-                    {
-                        this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameBySupervisorUnitIdList(this.CurrUser.ProjectId, this.CurrUser.UnitId));
-                    }
-                    else
-                    {
-                        this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameList(this.CurrUser.ProjectId));
-                    }
-                }
-
-                Funs.PleaseSelect(ddlSteel);
-                this.ddlSteel.Items.AddRange(BLL.MaterialService.GetSteelList());
-                Funs.PleaseSelect(drpJotType);
-                this.drpJotType.Items.AddRange(BLL.WeldService.GetJointTypeNameList());
                 this.Flag = "0";
             }
         }
@@ -103,11 +60,7 @@ namespace Web.WeldingReport
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
-        {
-            e.InputParameters["unitNo"] = this.ddlUnit.SelectedValue;
-            e.InputParameters["isoNo"] = this.txtIsoNo.Text.Trim();
-            e.InputParameters["areaNo"] = this.ddlWorkArea.SelectedValue;
-            e.InputParameters["steel"] = this.ddlSteel.SelectedValue;
+        {         
             if (this.CurrUser.ProjectId == null)
             {
                 e.InputParameters["projectId"] = this.drpProject.SelectedValue;
@@ -117,15 +70,6 @@ namespace Web.WeldingReport
                 e.InputParameters["projectId"] = this.CurrUser.ProjectId;
             }
             e.InputParameters["flag"] = Flag;
-            if (BLL.WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
-            {
-                e.InputParameters["supervisorUnitId"] = this.CurrUser.UnitId;
-            }
-            else
-            {
-                e.InputParameters["supervisorUnitId"] = null;
-            }
-            e.InputParameters["jotTypeId"] = this.drpJotType.SelectedValue;
         }
       
         /// <summary>
@@ -149,39 +93,13 @@ namespace Web.WeldingReport
         }
 
         /// <summary>
-        ///  单位下拉框联动事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void ddlUnit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ddlWorkArea.Items.Clear();
-            Funs.PleaseSelect(ddlWorkArea);
-            if (this.CurrUser.ProjectId == null)   //总部
-            {
-                this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.drpProject.SelectedValue, this.ddlUnit.SelectedValue));
-            }
-            else  //现场
-            {
-                if (BLL.WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
-                {
-                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListBySupervisorUnit(this.CurrUser.ProjectId, this.ddlUnit.SelectedValue, this.CurrUser.UnitId));
-                }
-                else
-                {
-                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.CurrUser.ProjectId, this.ddlUnit.SelectedValue));
-                }
-            }
-        }
-
-        /// <summary>
         /// 导出管线综合分析表信息
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btnExport_Click(object sender, ImageClickEventArgs e)
         {
-            this.gvIsoCompre.PageSize = 30000;
+            this.gvIsoCompre.PageSize = TestPackagePipelineAnalysisService.count;
             this.gvIsoCompre.PageIndex = 0;
             this.gvIsoCompre.DataBind();
             this.gvIsoCompre.BottomPagerRow.Visible = false;//导出到Excel表后，隐藏分页部分
@@ -221,13 +139,7 @@ namespace Web.WeldingReport
         }
 
         protected void drpProject_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ddlUnit.Items.Clear();
-            Funs.PleaseSelect(this.ddlUnit);
-            if (this.drpProject.SelectedValue != "0")
-            {
-                this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameList(this.drpProject.SelectedValue));
-            }
+        {           
         }
     }
 }

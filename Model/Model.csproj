@@ -61,11 +61,13 @@
     <Compile Include="SpRptIsoAnalyze.cs" />
     <Compile Include="SpRptIsoYzazjd.cs" />
     <Compile Include="SpRptndtReport.cs" />
+    <Compile Include="SpTestPackagePipelineAnalysisItem.cs" />
     <Compile Include="SpRptService.cs" />
     <Compile Include="SpRptUnitBawAnalyze.cs" />
     <Compile Include="SpRpWelderPerformance.cs" />
     <Compile Include="SpRpWeldReportExport.cs" />
     <Compile Include="SpSysMenuItem.cs" />
+    <Compile Include="SpRptJointComprehensiveOutItem.cs" />
     <Compile Include="TrustCheckReport.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

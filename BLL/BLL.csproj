@@ -115,6 +115,7 @@
     <Compile Include="SysManage\ErrLogInfoService.cs" />
     <Compile Include="TestPackageManage\AItemEndCheckService.cs" />
     <Compile Include="TestPackageManage\BItemEndCheckService.cs" />
+    <Compile Include="TestPackageManage\TestPackagePipelineAnalysisService.cs" />
     <Compile Include="TestPackageManage\ShowJointInfoViewService.cs" />
     <Compile Include="TestPackageManage\ShowTestPackageSearchService.cs" />
     <Compile Include="TestPackageManage\TestPackageManageAuditService.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="WeldingReportService\DetectionAnalyzeService.cs" />
     <Compile Include="WeldingReportService\IsoCmprehensiveService.cs" />
     <Compile Include="WeldingReportService\IsoCompreInfoService.cs" />
+    <Compile Include="WeldingReportService\JointComprehensiveOutService.cs" />
     <Compile Include="WeldingReportService\JointComprehensiveService.cs" />
     <Compile Include="WeldingReportService\MediaComprehensiveService.cs" />
     <Compile Include="WeldingReportService\PrefabricatedInstallService.cs" />

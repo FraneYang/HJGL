@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PointManage.aspx.cs" Inherits="Web.WeldingManage.PointManage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PointManage.aspx.cs"
+    Inherits="Web.WeldingManage.PointManage" %>
 
 <%@ Register Src="~/Controls/GridNavgator.ascx" TagName="GridNavgator" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -212,7 +213,7 @@
                                                 </td>
                                                 <td width="20%" align="left" height="35px">
                                                   <asp:TextBox ID="txtTableDate" Style="width: 80%; cursor: hand" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'whyGreen'})"
-                               runat="server" CssClass="textboxStyle"></asp:TextBox>
+                                                        runat="server" CssClass="textboxStyle"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>

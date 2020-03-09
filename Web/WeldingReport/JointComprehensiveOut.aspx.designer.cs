@@ -10,7 +10,7 @@
 namespace Web.WeldingReport {
     
     
-    public partial class IsoCompreInfo {
+    public partial class JointComprehensiveOut {
         
         /// <summary>
         /// form1 控件。
@@ -49,85 +49,22 @@ namespace Web.WeldingReport {
         protected global::System.Web.UI.WebControls.Image image15;
         
         /// <summary>
-        /// trProject 控件。
+        /// btnConfirm 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trProject;
+        protected global::System.Web.UI.WebControls.ImageButton btnConfirm;
         
         /// <summary>
-        /// Label7 控件。
+        /// btnReturn 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
-        
-        /// <summary>
-        /// drpProject 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpProject;
-        
-        /// <summary>
-        /// Label2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// ddlWorkArea 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlWorkArea;
-        
-        /// <summary>
-        /// Label3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// txtIsoNo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIsoNo;
-        
-        /// <summary>
-        /// btnFind 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFind;
-        
-        /// <summary>
-        /// btnExport 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnExport;
+        protected global::System.Web.UI.WebControls.ImageButton btnReturn;
         
         /// <summary>
         /// div1 控件。
@@ -148,13 +85,13 @@ namespace Web.WeldingReport {
         protected global::System.Web.UI.HtmlControls.HtmlTable Table2;
         
         /// <summary>
-        /// gvIsoCompreInfo 控件。
+        /// gvJointCompre 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvIsoCompreInfo;
+        protected global::System.Web.UI.WebControls.GridView gvJointCompre;
         
         /// <summary>
         /// ObjectDataSource1 控件。

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BLL;
+using System;
+using System.Data;
+using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.OleDb;
-using System.IO;
-using BLL;
 
 namespace Web.DataIn
 {

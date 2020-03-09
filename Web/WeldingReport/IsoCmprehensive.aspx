@@ -33,33 +33,31 @@
                             <asp:Label ID="Label7" runat="server" Text="项目"></asp:Label>&nbsp;
                         </td>
                         <td align="left">
-                            <asp:DropDownList ID="drpProject" runat="server" CssClass="textboxStyle" 
-                                Height="22px" Width="90%"
-                             AutoPostBack="true" onselectedindexchanged="drpProject_SelectedIndexChanged">
+                            <asp:DropDownList ID="drpProject" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%" AutoPostBack="true" OnSelectedIndexChanged="drpProject_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
-                        <td align="right" height="32px">  
+                        <td align="right" height="32px">
                         </td>
                         <td align="left">
                         </td>
-                         <td align="center" colspan="2">
+                        <td align="center" colspan="4">
                         </td>
                     </tr>
-                    <tr>
-                        <td align="right" height="32px" width="15%">
-                            <asp:Label ID="Label2" runat="server" Text="单位"></asp:Label>&nbsp;                           
+                    <tr style="height:32px">
+                        <td align="right">
+                            <asp:Label ID="Label2" runat="server" Text="单位"></asp:Label>&nbsp;
                         </td>
-                        <td width="25%" align="left">
-                            <asp:DropDownList ID="ddlUnit" runat="server" CssClass="textboxStyle"  
-                                Height="22px"  Width="90%" AutoPostBack="true"
-                                onselectedindexchanged="ddlUnit_SelectedIndexChanged">
+                        <td align="left">
+                            <asp:DropDownList ID="ddlUnit" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%" AutoPostBack="true" OnSelectedIndexChanged="ddlUnit_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
-                        <td align="right" width="15%">
+                        <td align="right">
                             &nbsp;
                             <asp:Label ID="Label3" runat="server" Text="管线"></asp:Label>&nbsp;
                         </td>
-                        <td width="25%" align="left">
+                        <td align="left" colspan="3">
                             <asp:TextBox ID="txtIsoNo" runat="server" CssClass="textboxStyle" Width="80%"></asp:TextBox>
                         </td>
                         <td align="left">
@@ -67,24 +65,34 @@
                                 OnClick="btnFind_Click" />
                         </td>
                     </tr>
-                    <tr>
-                        <td align="right" height="32px" >
+                    <tr style="height:32px">
+                        <td align="right" style="width:10%">
                             <asp:Label ID="Label4" runat="server" Text="工作区"></asp:Label>&nbsp;
                         </td>
-                        <td  align="left">
-                            <asp:DropDownList ID="ddlWorkArea" runat="server" CssClass="textboxStyle"  Height="22px"  Width="90%">
+                        <td align="left" style="width:20%">
+                            <asp:DropDownList ID="ddlWorkArea" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%">
                             </asp:DropDownList>
                         </td>
-                        <td align="right" >
+                        <td align="right" style="width:10%">
                             <asp:Label ID="Label5" runat="server" Text="材质"></asp:Label>&nbsp;
                         </td>
-                        <td  align="left">
-                            <asp:DropDownList ID="ddlSteel" runat="server" CssClass="textboxStyle"  Height="22px"  Width="90%">
+                        <td align="left" style="width:20%">
+                            <asp:DropDownList ID="ddlSteel" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%">
                             </asp:DropDownList>
                         </td>
-                        <td align="left">
-                            <asp:ImageButton ID="btnExport" runat="server" ImageUrl="~/Images/Export.gif"
-                                ToolTip="管线综合分析表" OnClick="btnExport_Click" />
+                         <td align="right" style="width:10%">
+                            <asp:Label ID="Label1" runat="server" Text="焊缝类型"></asp:Label>&nbsp;
+                        </td>
+                        <td align="left" style="width:20%">
+                            <asp:DropDownList ID="drpJotType" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%">
+                            </asp:DropDownList>
+                        </td>
+                        <td align="left" style="width:10%">
+                            <asp:ImageButton ID="btnExport" runat="server" ImageUrl="~/Images/Export.gif" ToolTip="管线综合分析表"
+                                OnClick="btnExport_Click" />
                         </td>
                     </tr>
                 </table>
@@ -96,7 +104,7 @@
             <tr>
                 <td width="100%">
                     <asp:GridView ID="gvIsoCompre" runat="server" AllowPaging="True" AllowSorting="True"
-                        PageSize="50" AutoGenerateColumns="False" HorizontalAlign="Justify" Width="100%"
+                        PageSize="20" AutoGenerateColumns="False" HorizontalAlign="Justify" Width="100%"
                         DataSourceID="ObjectDataSource1" OnDataBound="gvIsoCompre_DataBound">
                         <AlternatingRowStyle CssClass="GridBgColr" />
                         <Columns>
@@ -108,138 +116,137 @@
                                 <HeaderStyle Width="1%"></HeaderStyle>
                                 <ItemStyle HorizontalAlign="Center" Height="25px"></ItemStyle>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="bsu_unitcode" HeaderText="单位代码" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="bsu_unitcode" HeaderText="单位代码">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                           <asp:BoundField DataField="bsu_unitname" HeaderText="单位名称" >
-                            <HeaderStyle Width="4%" />
+                            <asp:BoundField DataField="bsu_unitname" HeaderText="单位名称">
+                                <HeaderStyle Width="4%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="baw_areano" HeaderText="工区代号" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="baw_areano" HeaderText="工区代号">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="iso_isono" HeaderText="管线号" >
-                            <HeaderStyle Width="5%" />
+                            <asp:BoundField DataField="iso_isono" HeaderText="管线号">
+                                <HeaderStyle Width="4%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="maxdate" HeaderText="最近焊期" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="maxdate" HeaderText="最近焊期">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
-
-                            <asp:BoundField DataField="total_jot" HeaderText="总焊口" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_jot" HeaderText="总焊口">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_sjot" HeaderText="预制总焊口" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="total_sjot" HeaderText="预制总焊口">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_fjot" HeaderText="安装总焊口" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="total_fjot" HeaderText="安装总焊口">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_jot" HeaderText="完成焊口" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="finished_total_jot" HeaderText="完成焊口">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_sjot" HeaderText="预制完成焊口" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="finished_total_sjot" HeaderText="预制完成焊口">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_fjot" HeaderText="安装完成焊口" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="finished_total_fjot" HeaderText="安装完成焊口">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="cut_total_jot" HeaderText="切除焊口" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="cut_total_jot" HeaderText="切除焊口">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate" HeaderText="完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate_s" HeaderText="预制完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate_f" HeaderText="安装完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_din" HeaderText="总达因" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_din" HeaderText="总达因">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_Sdin" HeaderText="预制达因" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_Sdin" HeaderText="预制达因">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_Fdin" HeaderText="安装达因" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_Fdin" HeaderText="安装达因">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_din" HeaderText="完成总达因" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="finished_total_din" HeaderText="完成总达因">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_Sdin" HeaderText="预制完成总达因" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="finished_total_Sdin" HeaderText="预制完成总达因">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="finished_total_Fdin" HeaderText="安装完成总达因" >
-                            <HeaderStyle Width="3%" />
+                            <asp:BoundField DataField="finished_total_Fdin" HeaderText="安装完成总达因">
+                                <HeaderStyle Width="3%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate_din" HeaderText="完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate_din_s" HeaderText="预制完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="finisedrate_din_f" HeaderText="安装完成比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_film" HeaderText="总拍片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_film" HeaderText="总拍片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="pass_film" HeaderText="合格片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="pass_film" HeaderText="合格片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="passreate" HeaderText="合格率" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="ext_total_film" HeaderText="扩透总片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="ext_total_film" HeaderText="扩透总片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="ext_pass_film" HeaderText="扩透合格片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="ext_pass_film" HeaderText="扩透合格片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="ext_passreate" HeaderText="扩透合格率" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="point_total_film" HeaderText="点口总片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="point_total_film" HeaderText="点口总片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="point_pass_film" HeaderText="点口合格片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="point_pass_film" HeaderText="点口合格片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="point_passreate" HeaderText="点口合格率" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="cut_total_film" HeaderText="切除总片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="cut_total_film" HeaderText="切除总片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="cut_pass_film" HeaderText="切除合格片数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="cut_pass_film" HeaderText="切除合格片数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="ext_jot" HeaderText="扩透数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="ext_jot" HeaderText="扩透数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="point_jot" HeaderText="点口数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="point_jot" HeaderText="点口数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="trust_total_jot" HeaderText="委托数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="trust_total_jot" HeaderText="委托数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="check_total_jot" HeaderText="已探口数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="check_total_jot" HeaderText="已探口数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="total_repairjot" HeaderText="返口数" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="total_repairjot" HeaderText="返口数">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="source_rate" HeaderText="检测比例" >
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="source_rate" HeaderText="检测比例">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="trustrate" HeaderText="委托比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="checkrate" HeaderText="已探比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
-                             <asp:BoundField DataField="FixedCheckRate" HeaderText="固定口检测比例" DataFormatString="{0:N1}%">
-                            <HeaderStyle Width="2%" />
+                            <asp:BoundField DataField="FixedCheckRate" HeaderText="固定口检测比例" DataFormatString="{0:N1}%">
+                                <HeaderStyle Width="2%" />
                             </asp:BoundField>
                         </Columns>
                         <HeaderStyle CssClass="GridBgColr" />
@@ -258,8 +265,9 @@
                             <asp:Parameter Name="areaNo" />
                             <asp:Parameter Name="steel" />
                             <asp:Parameter Name="projectId" />
-                            <asp:Parameter Name ="flag" />
-                            <asp:Parameter Name ="supervisorUnitId" /> 
+                            <asp:Parameter Name="flag" />
+                            <asp:Parameter Name="supervisorUnitId" />
+                            <asp:Parameter Name="jotTypeId" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </td>

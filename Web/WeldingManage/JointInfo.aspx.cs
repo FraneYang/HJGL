@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace Web.WeldingManage
 {
@@ -855,23 +856,31 @@ namespace Web.WeldingManage
                         Model.PW_JointInfo q = BLL.PW_JointInfoService.GetJointInfoByJotID(hdJOT_ID.Value);
                         if (q != null)
                         {
-                            if (String.IsNullOrEmpty(q.DReportID))
+                            if (this.CurrUser.Account != BLL.Const.AdminId)
                             {
-                                BLL.PW_JointInfoService.DeleteJointInfo(hdJOT_ID.Value);
-                                BLL.LogService.AddLog(this.CurrUser.UserId, "删除焊口信息");                                
-                            }
-                            else
-                            {
-                                if (string.IsNullOrEmpty(jotRes))
+                                if (String.IsNullOrEmpty(q.DReportID))
                                 {
-                                    jotRes = q.JOT_JointNo;
+                                    BLL.PW_JointInfoService.DeleteJointInfo(hdJOT_ID.Value);
+                                    BLL.LogService.AddLog(this.CurrUser.UserId, "删除焊口信息");
                                 }
                                 else
                                 {
-                                    jotRes += "," + q.JOT_JointNo;
+                                    if (string.IsNullOrEmpty(jotRes))
+                                    {
+                                        jotRes = q.JOT_JointNo;
+                                    }
+                                    else
+                                    {
+                                        jotRes += "," + q.JOT_JointNo;
+                                    }
                                 }
                             }
-
+                            else
+                            {
+                                this.DeleteJotId(q);
+                                BLL.PW_JointInfoService.DeleteJointInfo(hdJOT_ID.Value);
+                                BLL.LogService.AddLog(this.CurrUser.UserId, "删除焊口信息");
+                            }
                         }
                     }
                 }
@@ -896,6 +905,42 @@ namespace Web.WeldingManage
             {
                 ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('您没有这个权限，请与管理员联系！')", true);
             }
-        }            
+        }
+
+        #region 删除焊口项目页面单据记录信息
+        /// <summary>
+        /// 删除焊口项目页面单据记录信息
+        /// </summary>
+        /// <returns></returns>
+        private void DeleteJotId(Model.PW_JointInfo jot)
+        {
+            string info = string.Empty;
+            string id = jot.JOT_ID;
+            ///热处理
+            var hotProessItem = from x in Funs.DB.HotProessItem where x.JOT_ID == id select x;
+            if (hotProessItem.Count() > 0)
+            {
+                Funs.DB.HotProessItem.DeleteAllOnSubmit(hotProessItem);
+            }       
+            ///硬度检测
+            var HotHardItem = from x in Funs.DB.HotHardItem where x.JOT_ID == id select x;
+            if (HotHardItem.Count() > 0)
+            {
+                Funs.DB.HotHardItem.DeleteAllOnSubmit(HotHardItem);
+            }
+            ///检测单
+            var checkItem = from x in Funs.DB.CH_CheckItem where x.JOT_ID == id select x;
+            if (checkItem.Count() > 0)
+            {
+                Funs.DB.CH_CheckItem.DeleteAllOnSubmit(checkItem);
+            }
+            ///无损委托单
+            var trustItem = from x in Funs.DB.CH_TrustItem where x.JOT_ID == id select x;
+            if (trustItem.Count() > 0)
+            {
+                Funs.DB.CH_TrustItem.DeleteAllOnSubmit(trustItem);
+            }            
+        }
+        #endregion        
     }
 }

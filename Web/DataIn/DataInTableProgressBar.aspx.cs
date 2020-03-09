@@ -156,61 +156,61 @@ namespace Web.DataIn
                         newDataInTemp.ProjectId = this.CurrUser.ProjectId;
                         newDataInTemp.UserId = this.CurrUser.UserId;
                         newDataInTemp.Time = DateTime.Now;
-                        newDataInTemp.Value1 = pds.Rows[i][0].ToString();
-                        newDataInTemp.Value2 = pds.Rows[i][1].ToString();
-                        newDataInTemp.Value3 = pds.Rows[i][2].ToString();
-                        newDataInTemp.Value4 = pds.Rows[i][3].ToString();
-                        newDataInTemp.Value5 = pds.Rows[i][4].ToString();
-                        newDataInTemp.Value6 = pds.Rows[i][5].ToString();
-                        newDataInTemp.Value7 = pds.Rows[i][6].ToString();
-                        newDataInTemp.Value8 = pds.Rows[i][7].ToString();
-                        newDataInTemp.Value9 = pds.Rows[i][8].ToString();
-                        newDataInTemp.Value10 = pds.Rows[i][9].ToString();
-                        newDataInTemp.Value11 = pds.Rows[i][10].ToString();
-                        newDataInTemp.Value12 = pds.Rows[i][11].ToString();
-                        newDataInTemp.Value13 = pds.Rows[i][12].ToString();
-                        newDataInTemp.Value14 = pds.Rows[i][13].ToString();
-                        newDataInTemp.Value15 = pds.Rows[i][14].ToString();
-                        newDataInTemp.Value16 = pds.Rows[i][15].ToString();
-                        newDataInTemp.Value17 = pds.Rows[i][16].ToString();
-                        newDataInTemp.Value18 = pds.Rows[i][17].ToString();
-                        newDataInTemp.Value19 = pds.Rows[i][18].ToString();
-                        newDataInTemp.Value20 = pds.Rows[i][19].ToString();
-                        newDataInTemp.Value21 = pds.Rows[i][20].ToString();
-                        newDataInTemp.Value22 = pds.Rows[i][21].ToString();
-                        newDataInTemp.Value23 = pds.Rows[i][22].ToString();
-                        newDataInTemp.Value24 = pds.Rows[i][23].ToString();
-                        newDataInTemp.Value25 = pds.Rows[i][24].ToString();
-                        newDataInTemp.Value26 = pds.Rows[i][25].ToString();
-                        newDataInTemp.Value27 = pds.Rows[i][26].ToString();
-                        newDataInTemp.Value28 = pds.Rows[i][27].ToString();
-                        newDataInTemp.Value29 = pds.Rows[i][28].ToString();
-                        newDataInTemp.Value30 = pds.Rows[i][29].ToString();
-                        newDataInTemp.Value31 = pds.Rows[i][30].ToString();
-                        newDataInTemp.Value32 = pds.Rows[i][31].ToString();
-                        newDataInTemp.Value33 = pds.Rows[i][32].ToString();
-                        newDataInTemp.Value34 = pds.Rows[i][33].ToString();
-                        newDataInTemp.Value35 = pds.Rows[i][34].ToString();
-                        newDataInTemp.Value36 = pds.Rows[i][35].ToString();
-                        newDataInTemp.Value37 = pds.Rows[i][36].ToString();
-                        newDataInTemp.Value38 = pds.Rows[i][37].ToString();
-                        newDataInTemp.Value39 = pds.Rows[i][38].ToString();
-                        newDataInTemp.Value40 = pds.Rows[i][39].ToString();
-                        newDataInTemp.Value41 = pds.Rows[i][40].ToString();
-                        newDataInTemp.Value42 = pds.Rows[i][41].ToString();
-                        newDataInTemp.Value43 = pds.Rows[i][42].ToString();
-                        newDataInTemp.Value44 = pds.Rows[i][43].ToString();
-                        newDataInTemp.Value45 = pds.Rows[i][44].ToString();
-                        newDataInTemp.Value46 = pds.Rows[i][45].ToString();
-                        newDataInTemp.Value47 = pds.Rows[i][46].ToString();
-                        newDataInTemp.Value48 = pds.Rows[i][47].ToString();
-                        newDataInTemp.Value49 = pds.Rows[i][48].ToString();
-                        newDataInTemp.Value50 = pds.Rows[i][49].ToString();
-                        newDataInTemp.Value51 = pds.Rows[i][50].ToString();
-                        newDataInTemp.Value52 = pds.Rows[i][51].ToString();
-                        newDataInTemp.Value53 = pds.Rows[i][52].ToString();
-                        newDataInTemp.Value54 = pds.Rows[i][53].ToString();
-                        newDataInTemp.Value55 = pds.Rows[i][54].ToString();
+                        newDataInTemp.Value1 = pds.Rows[i][0].ToString().Trim();
+                        newDataInTemp.Value2 = pds.Rows[i][1].ToString().Trim();
+                        newDataInTemp.Value3 = pds.Rows[i][2].ToString().Trim();
+                        newDataInTemp.Value4 = pds.Rows[i][3].ToString().Trim();
+                        newDataInTemp.Value5 = pds.Rows[i][4].ToString().Trim();
+                        newDataInTemp.Value6 = pds.Rows[i][5].ToString().Trim();
+                        newDataInTemp.Value7 = pds.Rows[i][6].ToString().Trim();
+                        newDataInTemp.Value8 = pds.Rows[i][7].ToString().Trim();
+                        newDataInTemp.Value9 = pds.Rows[i][8].ToString().Trim();
+                        newDataInTemp.Value10 = pds.Rows[i][9].ToString().Trim();
+                        newDataInTemp.Value11 = pds.Rows[i][10].ToString().Trim();
+                        newDataInTemp.Value12 = pds.Rows[i][11].ToString().Trim();
+                        newDataInTemp.Value13 = pds.Rows[i][12].ToString().Trim();
+                        newDataInTemp.Value14 = pds.Rows[i][13].ToString().Trim();
+                        newDataInTemp.Value15 = pds.Rows[i][14].ToString().Trim();
+                        newDataInTemp.Value16 = pds.Rows[i][15].ToString().Trim();
+                        newDataInTemp.Value17 = pds.Rows[i][16].ToString().Trim();
+                        newDataInTemp.Value18 = pds.Rows[i][17].ToString().Trim();
+                        newDataInTemp.Value19 = pds.Rows[i][18].ToString().Trim();
+                        newDataInTemp.Value20 = pds.Rows[i][19].ToString().Trim();
+                        newDataInTemp.Value21 = pds.Rows[i][20].ToString().Trim();
+                        newDataInTemp.Value22 = pds.Rows[i][21].ToString().Trim();
+                        newDataInTemp.Value23 = pds.Rows[i][22].ToString().Trim();
+                        newDataInTemp.Value24 = pds.Rows[i][23].ToString().Trim();
+                        newDataInTemp.Value25 = pds.Rows[i][24].ToString().Trim();
+                        newDataInTemp.Value26 = pds.Rows[i][25].ToString().Trim();
+                        newDataInTemp.Value27 = pds.Rows[i][26].ToString().Trim();
+                        newDataInTemp.Value28 = pds.Rows[i][27].ToString().Trim();
+                        newDataInTemp.Value29 = pds.Rows[i][28].ToString().Trim();
+                        newDataInTemp.Value30 = pds.Rows[i][29].ToString().Trim();
+                        newDataInTemp.Value31 = pds.Rows[i][30].ToString().Trim();
+                        newDataInTemp.Value32 = pds.Rows[i][31].ToString().Trim();
+                        newDataInTemp.Value33 = pds.Rows[i][32].ToString().Trim();
+                        newDataInTemp.Value34 = pds.Rows[i][33].ToString().Trim();
+                        newDataInTemp.Value35 = pds.Rows[i][34].ToString().Trim();
+                        newDataInTemp.Value36 = pds.Rows[i][35].ToString().Trim();
+                        newDataInTemp.Value37 = pds.Rows[i][36].ToString().Trim();
+                        newDataInTemp.Value38 = pds.Rows[i][37].ToString().Trim();
+                        newDataInTemp.Value39 = pds.Rows[i][38].ToString().Trim();
+                        newDataInTemp.Value40 = pds.Rows[i][39].ToString().Trim();
+                        newDataInTemp.Value41 = pds.Rows[i][40].ToString().Trim();
+                        newDataInTemp.Value42 = pds.Rows[i][41].ToString().Trim();
+                        newDataInTemp.Value43 = pds.Rows[i][42].ToString().Trim();
+                        newDataInTemp.Value44 = pds.Rows[i][43].ToString().Trim();
+                        newDataInTemp.Value45 = pds.Rows[i][44].ToString().Trim();
+                        newDataInTemp.Value46 = pds.Rows[i][45].ToString().Trim();
+                        newDataInTemp.Value47 = pds.Rows[i][46].ToString().Trim();
+                        newDataInTemp.Value48 = pds.Rows[i][47].ToString().Trim();
+                        newDataInTemp.Value49 = pds.Rows[i][48].ToString().Trim();
+                        newDataInTemp.Value50 = pds.Rows[i][49].ToString().Trim();
+                        newDataInTemp.Value51 = pds.Rows[i][50].ToString().Trim();
+                        newDataInTemp.Value52 = pds.Rows[i][51].ToString().Trim();
+                        newDataInTemp.Value53 = pds.Rows[i][52].ToString().Trim();
+                        newDataInTemp.Value54 = pds.Rows[i][53].ToString().Trim();
+                        newDataInTemp.Value55 = pds.Rows[i][54].ToString().Trim();
                         newDataInTemp.RowNo = i + 2;
                         DataInTableService.AddDataInTemp(newDataInTemp);
                     }
@@ -478,11 +478,11 @@ namespace Web.DataIn
                     {
                         errInfo += "焊接方法代号为必填项；";
                     }
-                    if (!string.IsNullOrEmpty(tempData.Value15))
+                    if (!string.IsNullOrEmpty(tempData.Value15) && tempData.Value15.Trim().Length > 0)
                     {
                         try
                         {
-                            decimal testPress = Convert.ToDecimal(tempData.Value15);
+                            decimal testPress = Convert.ToDecimal(tempData.Value15.Trim());
                             isoInfo.ISO_TestPress = testPress;
                         }
                         catch (Exception)
@@ -490,7 +490,7 @@ namespace Web.DataIn
                             errInfo += "试验压力[" + tempData.Value15 + "]错误；";
                         }
                     }
-                    if (!string.IsNullOrEmpty(tempData.Value16))
+                    if (!string.IsNullOrEmpty(tempData.Value16) && tempData.Value16.Trim().Length > 0)
                     {
                         var material = materials.FirstOrDefault(x => x.WMT_MatCode == tempData.Value16 && x.WMT_MatType == "2");
                         if (material == null)

@@ -1503,6 +1503,7 @@
     <Content Include="SysManage\ErrLogInfo.aspx" />
     <Content Include="TestPackageManage\AItemEndCheck.aspx" />
     <Content Include="TestPackageManage\BItemEndCheck.aspx" />
+    <Content Include="TestPackageManage\TestPackagePipelineAnalysis.aspx" />
     <Content Include="TestPackageManage\ShowJointInfoView.aspx" />
     <Content Include="TestPackageManage\ShowTestPackageSearch.aspx" />
     <Content Include="TestPackageManage\TestPackageManageAudit.aspx" />
@@ -1563,6 +1564,7 @@
     <Content Include="WeldingReport\DetectionAnalyze.aspx" />
     <Content Include="WeldingReport\IsoCmprehensive.aspx" />
     <Content Include="WeldingReport\IsoCompreInfo.aspx" />
+    <Content Include="WeldingReport\JointComprehensiveOut.aspx" />
     <Content Include="WeldingReport\JointComprehensive.aspx" />
     <Content Include="WeldingReport\MediaComprehensive.aspx" />
     <Content Include="WeldingReport\PrefabricatedInstall.aspx" />
@@ -2262,6 +2264,13 @@
     <Compile Include="TestPackageManage\BItemEndCheck.aspx.designer.cs">
       <DependentUpon>BItemEndCheck.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestPackageManage\TestPackagePipelineAnalysis.aspx.cs">
+      <DependentUpon>TestPackagePipelineAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPackageManage\TestPackagePipelineAnalysis.aspx.designer.cs">
+      <DependentUpon>TestPackagePipelineAnalysis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TestPackageManage\ShowJointInfoView.aspx.cs">
       <DependentUpon>ShowJointInfoView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2569,6 +2578,13 @@
     </Compile>
     <Compile Include="WeldingReport\IsoCompreInfo.aspx.designer.cs">
       <DependentUpon>IsoCompreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WeldingReport\JointComprehensiveOut.aspx.cs">
+      <DependentUpon>JointComprehensiveOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WeldingReport\JointComprehensiveOut.aspx.designer.cs">
+      <DependentUpon>JointComprehensiveOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="WeldingReport\JointComprehensive.aspx.cs">
       <DependentUpon>JointComprehensive.aspx</DependentUpon>

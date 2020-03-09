@@ -19,7 +19,7 @@ namespace BLL
             get;
             set;
         }
-     
+
         /// <summary>
         /// 获取列表
         /// </summary>
@@ -30,23 +30,27 @@ namespace BLL
         /// <param name="startRowIndex"></param>
         /// <param name="maximumRows"></param>
         /// <returns></returns>
-        public static IEnumerable GetListData(string unitNo, string isoNo, string areaNo, string steel, string projectId, string flag,string supervisorUnitId,  int startRowIndex, int maximumRows)
+        public static IEnumerable GetListData(string unitNo, string isoNo, string areaNo, string steel, string projectId, string flag, string supervisorUnitId, string jotTypeId, int startRowIndex, int maximumRows)
         {
-            if (unitNo=="0")
+            if (unitNo == "0")
             {
                 unitNo = null;
             }
-            if (isoNo=="")
+            if (isoNo == "")
             {
                 isoNo = null;
             }
-            if (areaNo=="0")
+            if (areaNo == "0")
             {
                 areaNo = null;
             }
-            if (steel=="0")
+            if (steel == "0")
             {
                 steel = null;
+            }
+            if (jotTypeId == "0")
+            {
+                jotTypeId = null;
             }
 
             if (flag == "0" || string.IsNullOrEmpty(projectId))
@@ -56,7 +60,7 @@ namespace BLL
             }
             else
             {
-                IEnumerable<Model.SpRptIsoAnalyze> qq = Funs.DB.SpRptIsoAnalyze(unitNo, isoNo, areaNo, steel,projectId, supervisorUnitId);
+                IEnumerable<Model.SpRptIsoAnalyze> qq = Funs.DB.SpRptIsoAnalyze(unitNo, isoNo, areaNo, steel, projectId, supervisorUnitId, jotTypeId);
                 var q = qq.ToList();
                 count = q.Count();
                 return from x in q.Skip(startRowIndex).Take(maximumRows)
@@ -111,6 +115,7 @@ namespace BLL
                        };
             }
         }
+
         /// <summary>
         /// 获取列表数
         /// </summary>
@@ -120,7 +125,7 @@ namespace BLL
         /// <param name="steel"></param>
         /// <param name="projectId"></param>
         /// <returns></returns>
-        public static int GetListCount(string unitNo, string isoNo, string areaNo, string steel, string projectId, string flag,string supervisorUnitId)
+        public static int GetListCount(string unitNo, string isoNo, string areaNo, string steel, string projectId, string flag, string supervisorUnitId, string jotTypeId)
         {
             return count;
         }

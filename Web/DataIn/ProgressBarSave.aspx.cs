@@ -1,18 +1,9 @@
-﻿using System;
+﻿using BLL;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Configuration;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using System.Threading;
 using System.IO;
 using System.Linq;
-using BLL;
-using System.Data.OleDb;
-using System.Collections.Generic;
 
 namespace Web.DataIn
 {

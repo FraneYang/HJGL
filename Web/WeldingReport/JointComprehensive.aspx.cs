@@ -11,6 +11,7 @@ namespace Web.WeldingReport
 {
     public partial class JointComprehensive :PPage
     {
+        #region 自定义
         /// <summary>
         /// 按钮权限
         /// </summary>
@@ -37,6 +38,7 @@ namespace Web.WeldingReport
                 ViewState["Flag"] = value;
             }
         }
+        #endregion
 
         /// <summary>
         /// 加载页面
@@ -75,8 +77,23 @@ namespace Web.WeldingReport
                         this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaList(this.CurrUser.ProjectId));
                     }
                 }
-
-                this.Flag = "0";
+                string values = Request.Params["values"];
+                if (!string.IsNullOrEmpty(values))
+                {
+                    this.Flag = "1";
+                    List<string> listValues = Funs.GetStrListByStr(values, ',');
+                    if (listValues.Count == 5)
+                    {
+                        this.drpProject.SelectedValue = listValues[0];
+                        this.ddlWorkArea.SelectedValue = listValues[1];
+                        this.txtIsoNo.Text= listValues[2];
+                        this.txtJointDesc.Text = listValues[3];
+                    }
+                }
+                else
+                {
+                    this.Flag = "0";
+                }
             }
         }
         /// <summary>
@@ -140,7 +157,7 @@ namespace Web.WeldingReport
             this.gvJointCompre.DataBind();
         }
 
-
+        #region 导出焊口综合信息表信息
         /// <summary>
         /// 导出焊口综合信息表信息
         /// </summary>
@@ -172,11 +189,7 @@ namespace Web.WeldingReport
             Response.Flush();
             Response.End();
            
-        }
-
-
-            
-       
+        }       
         /// <summary>
         /// 重载VerifyRenderingInServerForm方法，否则运行的时候会出现如下错误提示：“类型“GridView”的控件“GridView1”必须放在具有 runat=server 的窗体标记内”
         /// </summary>
@@ -184,6 +197,7 @@ namespace Web.WeldingReport
         public override void VerifyRenderingInServerForm(Control control)
         {
         }
+        #endregion
 
         protected void drpProject_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -193,6 +207,28 @@ namespace Web.WeldingReport
             {
                 this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaList(this.drpProject.SelectedValue));
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExportJots_Click(object sender, ImageClickEventArgs e)
+        {
+            string projectId = this.CurrUser.ProjectId;
+            if (string.IsNullOrEmpty(projectId))
+            {
+                projectId= this.drpProject.SelectedValue;
+            }
+            string unitId = string.Empty;
+            if (WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
+            {
+                unitId = this.CurrUser.UnitId;
+            }
+            string values = projectId + "," + this.ddlWorkArea.SelectedValue + "," + this.txtIsoNo.Text + "," + this.txtJointDesc.Text + "," + unitId;
+           // ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script type='text/javascript'>ShowSearch('" + values + "');</script>");
+            Response.Redirect("JointComprehensiveOut.aspx?values="+values);
         }
     }
 }

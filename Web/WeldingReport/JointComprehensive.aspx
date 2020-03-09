@@ -6,8 +6,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>焊口综合信息</title>
-    <link href="../Styles/Style.css" rel="stylesheet" type="text/css" />
-     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+      <link href="../Styles/Style.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="../Controls/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <script src="../Scripts/ValidateGroupControl.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+        function ShowSearch(values) {
+            window.showModalDialog("JointComprehensiveOut.aspx?rnd=" + (new Date()).getTime() + "&values=" + values , "", "status=no;dialogWidth=1200px;dialogHeight=600px;menu=no;resizeable=no;scroll=no;center=yes;edge=raise;location=no");      
+          }
+        </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -71,7 +78,7 @@
                             <asp:ImageButton ID="btnExport" runat="server" ImageUrl="~/Images/Export.gif"
                                 ToolTip="焊口综合信息表" OnClick="btnExport_Click" /> 
                             <asp:ImageButton ID="btnExportJots" runat="server" ImageUrl="~/Images/ExportJots.gif"
-                                ToolTip="按导入模板导出焊口信息" OnClick="btnExport_Click" /> 
+                                ToolTip="按导入模板导出焊口信息" OnClick="btnExportJots_Click" /> 
                         </td>
                     </tr>
                 </table>

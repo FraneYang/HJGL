@@ -79,9 +79,9 @@ namespace Model
         /// <param name="steel"></param>
         /// <returns></returns>
         [Function(Name = "[dbo].[sp_rpt_iso_analyze]")]
-        public IEnumerable<SpRptIsoAnalyze> SpRptIsoAnalyze([Parameter(DbType = "NVARCHAR(50)")] string unitNo, [Parameter(DbType = "VARCHAR(50)")] string isono, [Parameter(DbType = "NVARCHAR(50)")] string areaNo, [Parameter(DbType = "nvarchar(50)")] string steel, [Parameter(DbType = "NVARCHAR(50)")] string projectId, [Parameter(DbType = "NVARCHAR(50)")] string supervisorUnitId)
+        public IEnumerable<SpRptIsoAnalyze> SpRptIsoAnalyze([Parameter(DbType = "NVARCHAR(50)")] string unitNo, [Parameter(DbType = "VARCHAR(50)")] string isono, [Parameter(DbType = "NVARCHAR(50)")] string areaNo, [Parameter(DbType = "nvarchar(50)")] string steel, [Parameter(DbType = "NVARCHAR(50)")] string projectId, [Parameter(DbType = "NVARCHAR(50)")] string supervisorUnitId, [Parameter(DbType = "NVARCHAR(50)")] string jotTypeId)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)MethodInfo.GetCurrentMethod()), unitNo, isono, areaNo, steel, projectId, supervisorUnitId);
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)MethodInfo.GetCurrentMethod()), unitNo, isono, areaNo, steel, projectId, supervisorUnitId, jotTypeId);
             return (ISingleResult<SpRptIsoAnalyze>)result.ReturnValue;
         }
 
@@ -151,6 +151,22 @@ namespace Model
         {
             IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)MethodInfo.GetCurrentMethod()), unitId, workAreaId, projectId);
             return (ISingleResult<TrustCheckReport>)result.ReturnValue;
+        }
+
+        /// <summary>
+        /// 按导入模板导出焊口信息
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="workAreaId"></param>
+        /// <param name="isono"></param>
+        /// <param name="jointDesc"></param>
+        /// <param name="unitId"></param>
+        /// <returns></returns>
+        [Function(Name = "[dbo].[sp_rpt_JointComprehensiveOut]")]
+        public IEnumerable<SpRptJointComprehensiveOutItem> SpJointComprehensiveOut([Parameter(DbType = "nvarchar(50)")] string projectId, [Parameter(DbType = "NVARCHAR(50)")] string workAreaId, [Parameter(DbType = "VARCHAR(50)")] string isono, [Parameter(DbType = "VARCHAR(50)")] string jointDesc, [Parameter(DbType = "NVARCHAR(50)")] string unitId)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)MethodInfo.GetCurrentMethod()), projectId, workAreaId, isono, jointDesc, unitId);
+            return (ISingleResult<SpRptJointComprehensiveOutItem>)result.ReturnValue;
         }
     }
 }

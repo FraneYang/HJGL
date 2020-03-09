@@ -243,6 +243,23 @@ namespace BLL
         }
 
         /// <summary>
+        /// 根据标识返回字符串list
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static List<string> GetStrListByStr(string str, char n)
+        {
+            List<string> strList = new List<string>();
+            if (!string.IsNullOrEmpty(str))
+            {
+                strList.AddRange(str.Split(n));
+            }
+
+            return strList;
+        }
+
+        /// <summary>
         /// 指定上传文件的名称
         /// </summary>
         /// <returns></returns>

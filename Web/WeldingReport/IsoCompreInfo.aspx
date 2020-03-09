@@ -104,7 +104,7 @@
                             <asp:BoundField DataField="ISO_SubSysNo" HeaderText="分系统号" />
                             <asp:BoundField DataField="ISO_CwpNo" HeaderText="工作包号" />
                             <asp:BoundField DataField="ISO_IsoNumber" HeaderText="单线图号" />
-                            <asp:TemplateField HeaderText="是否需要热处理">
+                            <asp:TemplateField HeaderText="需要热处理">
                                 <ItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# ConvertString(Eval("Is_proess")) %>'></asp:Label>
                                 </ItemTemplate>

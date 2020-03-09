@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace Web.WeldingReport {
+namespace Web.TestPackageManage {
     
     
-    public partial class IsoCompreInfo {
+    public partial class TestPackagePipelineAnalysis {
         
         /// <summary>
         /// form1 控件。
@@ -76,42 +76,6 @@ namespace Web.WeldingReport {
         protected global::System.Web.UI.WebControls.DropDownList drpProject;
         
         /// <summary>
-        /// Label2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// ddlWorkArea 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlWorkArea;
-        
-        /// <summary>
-        /// Label3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// txtIsoNo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIsoNo;
-        
-        /// <summary>
         /// btnFind 控件。
         /// </summary>
         /// <remarks>
@@ -148,13 +112,13 @@ namespace Web.WeldingReport {
         protected global::System.Web.UI.HtmlControls.HtmlTable Table2;
         
         /// <summary>
-        /// gvIsoCompreInfo 控件。
+        /// gvIsoCompre 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvIsoCompreInfo;
+        protected global::System.Web.UI.WebControls.GridView gvIsoCompre;
         
         /// <summary>
         /// ObjectDataSource1 控件。
