@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace Web.WeldingManage
 {
@@ -182,10 +183,10 @@ namespace Web.WeldingManage
                 {
                     if (judgementDelete())
                     {
-                        var tP_IsoList = (from x in BLL.Funs.DB.TP_IsoList where x.ISO_ID == ISO_ID select x).FirstOrDefault();
-                        if (tP_IsoList != null)
+                        var tP_IsoList = (from x in BLL.Funs.DB.TP_IsoList where x.ISO_ID == ISO_ID select x);
+                        if (tP_IsoList.Count() > 0)
                         {
-                            BLL.Funs.DB.TP_IsoList.DeleteOnSubmit(tP_IsoList);
+                            BLL.Funs.DB.TP_IsoList.DeleteAllOnSubmit(tP_IsoList);
                             BLL.Funs.DB.SubmitChanges();
                         }
                         BLL.PW_IsoInfoService.DeleteIsoInfo(ISO_ID);
@@ -464,7 +465,7 @@ namespace Web.WeldingManage
         private bool judgementDelete()
         {
             string content = "";
-            if (BLL.PW_JointInfoService.IsExistJointInfoWeld(ISO_ID))
+            if (Funs.DB.PW_JointInfo.FirstOrDefault(x=>x.ISO_ID == ISO_ID) != null)
             {
                 content = "该管线下焊口已有焊接信息，不能删除！";
             }
@@ -476,6 +477,7 @@ namespace Web.WeldingManage
             {
                 content = "B项尾工已经使用了该管线，不能删除！";
             }
+          
             if (content == "")
             {
                 return true;

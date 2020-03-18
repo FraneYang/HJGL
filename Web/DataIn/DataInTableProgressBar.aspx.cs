@@ -272,7 +272,10 @@ namespace Web.DataIn
                     int? installationId = null;
                     string unitId = string.Empty;
                     string workAreaId = string.Empty;
-
+                    //if (!string.IsNullOrEmpty(tempData.Value44))
+                    //{
+                    //    int y = 0;
+                    //}
                     Model.PW_IsoInfo isoInfo = new Model.PW_IsoInfo(); ///管线
                     Model.PW_JointInfo jointInfo = new Model.PW_JointInfo();  ///焊口
                     #region 管线-焊口
@@ -744,6 +747,12 @@ namespace Web.DataIn
                         {
                             jointInfo.JOT_CellWelder = getCellWelder.WED_ID;
                         }
+                        var getWeldReportMain = Funs.DB.BO_WeldReportMain.FirstOrDefault(x => x.ProjectId == projectId && x.InstallationId == installationId && x.BSU_ID == unitId && x.JOT_DailyReportNo == newWeldReportMain.JOT_DailyReportNo);
+                        if (getWeldReportMain != null)
+                        {
+                            //jointInfo.DReportID = getWeldReportMain.DReportID;
+                            newWeldReportMain.DReportID = getWeldReportMain.DReportID;
+                        }
                     }
                     #endregion
 
@@ -863,12 +872,18 @@ namespace Web.DataIn
                             #region 日报
                             if (!string.IsNullOrEmpty(newWeldReportMain.JOT_DailyReportNo))
                             {
-                                var getWeldReportMain = Funs.DB.BO_WeldReportMain.FirstOrDefault(x => x.ProjectId == projectId && x.InstallationId == installationId && x.BSU_ID == unitId && x.JOT_DailyReportNo == newWeldReportMain.JOT_DailyReportNo);
+                                var getWeldReportMain = Funs.DB.BO_WeldReportMain.FirstOrDefault(x => x.DReportID == newWeldReportMain.DReportID);
                                 if (getWeldReportMain != null)
                                 {
-                                    newWeldReportMain.DReportID = getWeldReportMain.DReportID;
-                                    newWeldReportMain.CHT_Tabler = getWeldReportMain.CHT_Tabler;
-                                    newWeldReportMain.CHT_TableDate = getWeldReportMain.CHT_TableDate;
+                                   // getWeldReportMain.DReportID = newWeldReportMain.DReportID;
+                                    getWeldReportMain.CHT_Tabler = newWeldReportMain.CHT_Tabler;
+                                    if (newWeldReportMain.JOT_WeldDate > getWeldReportMain.CHT_TableDate)
+                                    {
+                                        getWeldReportMain.CHT_TableDate = newWeldReportMain.JOT_WeldDate;
+                                        getWeldReportMain.JOT_WeldDate = newWeldReportMain.JOT_WeldDate;
+                                    }
+                                    getWeldReportMain.InstallationId = newWeldReportMain.InstallationId;
+                                    getWeldReportMain.BSU_ID = newWeldReportMain.BSU_ID;                                
                                     Funs.DB.SubmitChanges();
                                 }
                                 else
@@ -891,8 +906,14 @@ namespace Web.DataIn
                                 if (getPoint != null)
                                 {
                                     newPoint.PW_PointID = getPoint.PW_PointID;
-                                    newPoint.PW_Tabler = getPoint.PW_Tabler;
-                                    newPoint.PW_TablerDate = getPoint.PW_TablerDate;
+                                    getPoint.PW_Tabler = newPoint.PW_Tabler;
+                                    if (newPoint.PW_PointDate > getPoint.PW_PointDate)
+                                    {
+                                        getPoint.PW_TablerDate = newPoint.PW_TablerDate;
+                                        getPoint.PW_PointDate = newPoint.PW_PointDate;
+                                    }
+                                    getPoint.InstallationId = newPoint.InstallationId;
+                                    getPoint.BSU_ID = newPoint.BSU_ID;
                                     Funs.DB.SubmitChanges();
                                 }
                                 else
@@ -916,28 +937,33 @@ namespace Web.DataIn
                                 var getTrust = Funs.DB.CH_Trust.FirstOrDefault(x => x.ProjectId == projectId && x.InstallationId == installationId && x.CH_TrustUnit == unitId && x.CH_TrustCode == newTrust.CH_TrustCode);
                                 if (getTrust != null)
                                 {
-                                    newTrust.CH_TrustID = getTrust.CH_TrustID;
-                                    newTrust.CH_TrustType = getTrust.CH_TrustType;
-                                    newTrust.CH_TrustMan = getTrust.CH_TrustMan;
-                                    newTrust.CH_Tabler = getTrust.CH_Tabler;
-                                    newTrust.CH_TableDate = getTrust.CH_TableDate;
-                                    newTrust.CH_AuditMan = getTrust.CH_AuditMan;
-                                    newTrust.CH_AuditDate = getTrust.CH_AuditDate;
-                                    newTrust.CH_WorkNo = getTrust.CH_WorkNo;
-                                    newTrust.CH_SlopeType = getTrust.CH_SlopeType;
-                                    newTrust.CH_WeldMethod = getTrust.CH_WeldMethod;
-                                    newTrust.CH_NDTRate = getTrust.CH_NDTRate;
-                                    if (!string.IsNullOrEmpty(getTrust.CH_NDTMethod))
+                                    newTrust.CH_TrustID= getTrust.CH_TrustID;
+                                    getTrust.CH_TrustType = newTrust.CH_TrustType;
+                                    getTrust.CH_TrustMan = newTrust.CH_TrustMan;
+                                    if (newTrust.CH_TrustDate > getTrust.CH_TrustDate)
                                     {
-                                        newTrust.CH_NDTMethod = getTrust.CH_NDTMethod;
+                                        getTrust.CH_TrustDate = newTrust.CH_TrustDate;                                      
+                                        getTrust.CH_TableDate = newTrust.CH_TableDate;                                        
+                                        getTrust.CH_AuditDate = newTrust.CH_AuditDate;
+                                    }
+
+                                    getTrust.CH_Tabler = newTrust.CH_Tabler;
+                                    getTrust.CH_AuditMan = newTrust.CH_AuditMan;
+                                    getTrust.CH_WorkNo = newTrust.CH_WorkNo;
+                                    getTrust.CH_SlopeType = newTrust.CH_SlopeType;
+                                    getTrust.CH_WeldMethod = newTrust.CH_WeldMethod;
+                                    getTrust.CH_NDTRate = newTrust.CH_NDTRate;
+                                    if (!string.IsNullOrEmpty(newTrust.CH_NDTMethod))
+                                    {
+                                        getTrust.CH_NDTMethod = newTrust.CH_NDTMethod;
                                     }
                                     else
                                     {
-                                        newTrust.CH_NDTMethod = isoInfo.NDT_ID;
+                                        getTrust.CH_NDTMethod = isoInfo.NDT_ID;
                                     }
-                                    newTrust.CH_AcceptGrade = getTrust.CH_AcceptGrade;
-                                    newTrust.CH_CheckUnit = getTrust.CH_CheckUnit;
-                                    newTrust.CH_RequestDate = getTrust.CH_RequestDate;
+                                    getTrust.CH_AcceptGrade = newTrust.CH_AcceptGrade;
+                                    getTrust.CH_CheckUnit = newTrust.CH_CheckUnit;
+                                    getTrust.CH_RequestDate = newTrust.CH_RequestDate;
                                     Funs.DB.SubmitChanges();
                                 }
                                 else
@@ -1002,13 +1028,17 @@ namespace Web.DataIn
                                 if (getCheck != null)
                                 {
                                     newCheck.CHT_CheckID = getCheck.CHT_CheckID;
-                                    newCheck.CH_TrustID = getCheck.CH_TrustID;
-                                    newCheck.CHT_CheckType = getCheck.CHT_CheckType;
-                                    newCheck.CHT_CheckMan = getCheck.CHT_CheckMan;
-                                    newCheck.CHT_Tabler = getCheck.CHT_Tabler;
-                                    newCheck.CHT_TableDate = getCheck.CHT_TableDate;
-                                    newCheck.CHT_AuditMan = getCheck.CHT_AuditMan;
-                                    newCheck.CHT_AuditDate = getCheck.CHT_AuditDate;
+                                    getCheck.CH_TrustID = newCheck.CH_TrustID;
+                                    getCheck.CHT_CheckType = newCheck.CHT_CheckType;
+                                    getCheck.CHT_CheckMan = newCheck.CHT_CheckMan;
+                                    getCheck.CHT_Tabler = newCheck.CHT_Tabler;
+                                    if (newCheck.CHT_CheckDate > getCheck.CHT_CheckDate)
+                                    {
+                                        getCheck.CHT_CheckDate = newCheck.CHT_CheckDate;
+                                        getCheck.CHT_TableDate = newCheck.CHT_TableDate;
+                                        getCheck.CHT_AuditDate = newCheck.CHT_AuditDate;
+                                    }                                   
+                                    getCheck.CHT_AuditMan = newCheck.CHT_AuditMan;                                    
                                     Funs.DB.SubmitChanges();
                                 }
                                 else
@@ -1047,7 +1077,7 @@ namespace Web.DataIn
                                 else
                                 {
                                     newCheckItem.CHT_CheckItemID = getCheckItem.CHT_CheckItemID;
-                                    newCheckItem.CHT_AuditTime = getCheckItem.CHT_AuditTime;
+                                    getCheckItem.CHT_AuditTime = newCheckItem.CHT_AuditTime;
                                     Funs.DB.SubmitChanges();
                                 }
 

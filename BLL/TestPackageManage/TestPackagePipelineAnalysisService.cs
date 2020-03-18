@@ -47,7 +47,7 @@ namespace BLL
                     return new object[] { "" };
                 }
                 return from x in q.Skip(startRowIndex).Take(maximumRows)
-                       orderby x.PTP_TestPackageNo, x.ISO_IsoNo
+                       orderby x.PTP_TestPackageNo, x.BWsource_rate, x.ISO_IsoNo
                        select new
                        {
                            x.ProjectId,
@@ -280,35 +280,34 @@ namespace BLL
         /// <returns></returns>
         public static string getWelds(List<Model.PW_JointInfo> getBWJots, string projectId,List<Model.BS_Welder> getWelders)
         {
-            string welders = string.Empty;
-           
+            string welders = string.Empty;           
             foreach (var item in getBWJots)
             {
                 var getCellWelder = getWelders.FirstOrDefault(x => x.WED_ID == item.JOT_CellWelder);
-                if (getCellWelder != null && !welders.Contains(getCellWelder.WED_Name))
+                if (getCellWelder != null && !welders.Contains(getCellWelder.WED_Code))
                 {
                     var getJotIdLists = getBWJots.FirstOrDefault(x =>x.PW_PointID != null && (x.JOT_CellWelder == getCellWelder.WED_ID || x.JOT_FloorWelder == getCellWelder.WED_ID));
                     if (getJotIdLists != null)
                     {
-                        welders += getCellWelder.WED_Name +",";
+                        welders += getCellWelder.WED_Code +",";
                     }
                     else
                     {
-                        welders += getCellWelder.WED_Name +"*,";
+                        welders += getCellWelder.WED_Code + "*,";
                     }
                 }
 
                 var getFloorWelder = getWelders.FirstOrDefault(x => x.WED_ID == item.JOT_FloorWelder);
-                if (getFloorWelder != null && !welders.Contains(getFloorWelder.WED_Name))
+                if (getFloorWelder != null && !welders.Contains(getFloorWelder.WED_Code))
                 {
                     var getJotIdLists = getBWJots.FirstOrDefault(x => x.PW_PointID != null && (x.JOT_CellWelder == getFloorWelder.WED_ID || x.JOT_FloorWelder == getFloorWelder.WED_ID));
                     if (getJotIdLists != null)
                     {
-                        welders += getFloorWelder.WED_Name + ",";
+                        welders += getFloorWelder.WED_Code + ",";
                     }
                     else
                     {
-                        welders += getFloorWelder.WED_Name + "*,";
+                        welders += getFloorWelder.WED_Code + "*,";
                     }
                 }
             }
