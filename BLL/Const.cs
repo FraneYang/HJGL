@@ -832,6 +832,10 @@ namespace BLL
         /// 管道对接焊接接头报检/检查记录
         /// </summary>
         public const string WeldJointCheckReportId = "36";
+        /// <summary>
+        /// 管道系统压力试验记录
+        /// </summary>
+        public const string TestPackageManageReportId = "37";
 
         #endregion
     }

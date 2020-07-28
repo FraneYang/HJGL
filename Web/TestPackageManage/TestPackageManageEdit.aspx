@@ -28,6 +28,13 @@
             else
                 args.IsValid = true;
         }
+
+        function CheckReportPrint(reportId, replaceParameter, varValue) {
+            var result = window.showModalDialog("../ReportPrint/ExReportPrint.aspx?reportId=" + reportId + "&replaceParameter=" + replaceParameter + "&varValue=" + escape(varValue), "", "status=no;dialogWidth=1024px;dialogHeight=640px;menu=no;resizeable=no;scroll=no;center=yes;edge=raise;location=no");
+            if (result != "") {
+                document.getElementById("ImageButton1").click();
+            }
+        } 
       
     </script>
 </head>
@@ -46,7 +53,8 @@
                         <td align="right" valign="middle" style="width: 75%; height: 30px;">
                             <asp:ImageButton ID="btnAdd" runat="server" ImageUrl="~/Images/addbutton.gif" OnClick="btnAdd_Click" />
                             <asp:ImageButton ID="btnPrint" runat="server" ImageUrl="~/Images/Print1.gif" 
-                                ToolTip="打印"  /><asp:ImageButton ID="ImageButton1"
+                                ToolTip="打印"  onclick="btnPrint_Click"/>
+                            <asp:ImageButton ID="ImageButton1"
                                     runat="server" Width="0" />
                             <asp:ImageButton ID="btnDelete" runat="server" 
                                 ImageUrl="~/Images/deletebutton.gif" onclick="btnDelete_Click" OnClientClick="return confirm(&quot;确定要删除此条信息吗？&quot;);"/>

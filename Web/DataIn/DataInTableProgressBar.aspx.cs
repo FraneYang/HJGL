@@ -1107,12 +1107,14 @@ namespace Web.DataIn
                                         PTP_Modifier = this.CurrUser.UserId,
                                         PTP_Tabler = this.CurrUser.UserId,
                                         PTP_TableDate = DateTime.Now.Date,
+                                        WorkAreaId= isoInfo.BAW_ID,
                                     };
                                     Funs.DB.TP_TestPackage.InsertOnSubmit(newTestPackage);
                                     Funs.DB.SubmitChanges();
                                 }
                                 else
                                 {
+                                    getTestPackage.WorkAreaId = isoInfo.BAW_ID;
                                     ptp_ID = getTestPackage.PTP_ID;
                                 }
 

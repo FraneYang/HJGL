@@ -6461,6 +6461,8 @@ namespace Model
 		
 		private EntitySet<PW_IsoInfo> _PW_IsoInfo;
 		
+		private EntitySet<PW_JointInfo> _PW_JointInfo;
+		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -6481,6 +6483,7 @@ namespace Model
 		{
 			this._BO_NDTTrust = new EntitySet<BO_NDTTrust>(new Action<BO_NDTTrust>(this.attach_BO_NDTTrust), new Action<BO_NDTTrust>(this.detach_BO_NDTTrust));
 			this._PW_IsoInfo = new EntitySet<PW_IsoInfo>(new Action<PW_IsoInfo>(this.attach_PW_IsoInfo), new Action<PW_IsoInfo>(this.detach_PW_IsoInfo));
+			this._PW_JointInfo = new EntitySet<PW_JointInfo>(new Action<PW_JointInfo>(this.attach_PW_JointInfo), new Action<PW_JointInfo>(this.detach_PW_JointInfo));
 			OnCreated();
 		}
 		
@@ -6610,6 +6613,19 @@ namespace Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_PW_JointInfo_BS_NDTRate", Storage="_PW_JointInfo", ThisKey="NDTR_ID", OtherKey="NDTR_ID", DeleteRule="NO ACTION")]
+		public EntitySet<PW_JointInfo> PW_JointInfo
+		{
+			get
+			{
+				return this._PW_JointInfo;
+			}
+			set
+			{
+				this._PW_JointInfo.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -6649,6 +6665,18 @@ namespace Model
 		}
 		
 		private void detach_PW_IsoInfo(PW_IsoInfo entity)
+		{
+			this.SendPropertyChanging();
+			entity.BS_NDTRate = null;
+		}
+		
+		private void attach_PW_JointInfo(PW_JointInfo entity)
+		{
+			this.SendPropertyChanging();
+			entity.BS_NDTRate = this;
+		}
+		
+		private void detach_PW_JointInfo(PW_JointInfo entity)
 		{
 			this.SendPropertyChanging();
 			entity.BS_NDTRate = null;
@@ -11199,7 +11227,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHT_CheckCode", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHT_CheckCode", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string CHT_CheckCode
 		{
 			get
@@ -12793,7 +12821,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="NVarChar(100)")]
 		public string CH_TrustCode
 		{
 			get
@@ -21535,6 +21563,8 @@ namespace Model
 		
 		private string _OldJointNo;
 		
+		private string _NDTR_ID;
+		
 		private EntitySet<CH_CheckItem> _CH_CheckItem;
 		
 		private EntitySet<HotProessItem> _HotProessItem;
@@ -21552,6 +21582,8 @@ namespace Model
 		private EntityRef<BS_Component> _JOT_Component2BS_Component;
 		
 		private EntityRef<BS_JointType> _BS_JointType;
+		
+		private EntityRef<BS_NDTRate> _BS_NDTRate;
 		
 		private EntityRef<BS_NDTType> _BS_NDTType;
 		
@@ -21731,6 +21763,8 @@ namespace Model
     partial void OnWeldingProcedureJotIdChanged();
     partial void OnOldJointNoChanging(string value);
     partial void OnOldJointNoChanged();
+    partial void OnNDTR_IDChanging(string value);
+    partial void OnNDTR_IDChanged();
     #endregion
 		
 		public PW_JointInfo()
@@ -21744,6 +21778,7 @@ namespace Model
 			this._BS_Component = default(EntityRef<BS_Component>);
 			this._JOT_Component2BS_Component = default(EntityRef<BS_Component>);
 			this._BS_JointType = default(EntityRef<BS_JointType>);
+			this._BS_NDTRate = default(EntityRef<BS_NDTRate>);
 			this._BS_NDTType = default(EntityRef<BS_NDTType>);
 			this._BS_SlopeType = default(EntityRef<BS_SlopeType>);
 			this._BS_Steel = default(EntityRef<BS_Steel>);
@@ -23245,6 +23280,30 @@ namespace Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NDTR_ID", DbType="VarChar(50)")]
+		public string NDTR_ID
+		{
+			get
+			{
+				return this._NDTR_ID;
+			}
+			set
+			{
+				if ((this._NDTR_ID != value))
+				{
+					if (this._BS_NDTRate.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNDTR_IDChanging(value);
+					this.SendPropertyChanging();
+					this._NDTR_ID = value;
+					this.SendPropertyChanged("NDTR_ID");
+					this.OnNDTR_IDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CH_CHECK_REFERENCE_PW_JOINT", Storage="_CH_CheckItem", ThisKey="JOT_ID", OtherKey="JOT_ID", DeleteRule="NO ACTION")]
 		public EntitySet<CH_CheckItem> CH_CheckItem
 		{
@@ -23505,6 +23564,40 @@ namespace Model
 						this._JOTY_ID = default(string);
 					}
 					this.SendPropertyChanged("BS_JointType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_PW_JointInfo_BS_NDTRate", Storage="_BS_NDTRate", ThisKey="NDTR_ID", OtherKey="NDTR_ID", IsForeignKey=true)]
+		public BS_NDTRate BS_NDTRate
+		{
+			get
+			{
+				return this._BS_NDTRate.Entity;
+			}
+			set
+			{
+				BS_NDTRate previousValue = this._BS_NDTRate.Entity;
+				if (((previousValue != value) 
+							|| (this._BS_NDTRate.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BS_NDTRate.Entity = null;
+						previousValue.PW_JointInfo.Remove(this);
+					}
+					this._BS_NDTRate.Entity = value;
+					if ((value != null))
+					{
+						value.PW_JointInfo.Add(this);
+						this._NDTR_ID = value.NDTR_ID;
+					}
+					else
+					{
+						this._NDTR_ID = default(string);
+					}
+					this.SendPropertyChanged("BS_NDTRate");
 				}
 			}
 		}
@@ -32528,6 +32621,8 @@ namespace Model
 		
 		private string _FinishDef;
 		
+		private string _WorkAreaId;
+		
 		private EntitySet<TP_IsoList> _TP_IsoList;
 		
 		private EntityRef<Base_Installation> _Base_Installation;
@@ -32622,6 +32717,8 @@ namespace Model
     partial void OnInstallationIdChanged();
     partial void OnFinishDefChanging(string value);
     partial void OnFinishDefChanged();
+    partial void OnWorkAreaIdChanging(string value);
+    partial void OnWorkAreaIdChanged();
     #endregion
 		
 		public TP_TestPackage()
@@ -33416,6 +33513,26 @@ namespace Model
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkAreaId", DbType="NVarChar(50)")]
+		public string WorkAreaId
+		{
+			get
+			{
+				return this._WorkAreaId;
+			}
+			set
+			{
+				if ((this._WorkAreaId != value))
+				{
+					this.OnWorkAreaIdChanging(value);
+					this.SendPropertyChanging();
+					this._WorkAreaId = value;
+					this.SendPropertyChanged("WorkAreaId");
+					this.OnWorkAreaIdChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_TP_ISOLI_REFERENCE_TP_TESTP", Storage="_TP_IsoList", ThisKey="PTP_ID", OtherKey="PTP_ID", DeleteRule="NO ACTION")]
 		public EntitySet<TP_IsoList> TP_IsoList
 		{
@@ -34003,7 +34120,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TRUSTCODE1", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TRUSTCODE1", DbType="NVarChar(100)")]
 		public string CH_TRUSTCODE1
 		{
 			get
@@ -34502,7 +34619,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="NVarChar(100)")]
 		public string CH_TrustCode
 		{
 			get
@@ -34825,7 +34942,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="NVarChar(100)")]
 		public string CH_TrustCode
 		{
 			get
@@ -35176,7 +35293,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHT_CheckCode", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHT_CheckCode", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string CHT_CheckCode
 		{
 			get
@@ -35228,6 +35345,8 @@ namespace Model
 		private string _CH_TrustType;
 		
 		private System.Nullable<System.DateTime> _CH_TrustDate;
+		
+		private string _ISO_ID;
 		
 		private string _ISO_IsoNo;
 		
@@ -35377,6 +35496,22 @@ namespace Model
 				if ((this._CH_TrustDate != value))
 				{
 					this._CH_TrustDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISO_ID", DbType="VarChar(50)")]
+		public string ISO_ID
+		{
+			get
+			{
+				return this._ISO_ID;
+			}
+			set
+			{
+				if ((this._ISO_ID != value))
+				{
+					this._ISO_ID = value;
 				}
 			}
 		}
@@ -38528,7 +38663,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WLO_Name", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WLO_Name", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
 		public string WLO_Name
 		{
 			get
@@ -39376,7 +39511,7 @@ namespace Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CH_TrustCode", DbType="NVarChar(100)")]
 		public string CH_TrustCode
 		{
 			get

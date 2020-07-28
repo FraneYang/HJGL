@@ -20,7 +20,7 @@ namespace BLL
         /// <returns></returns>
         public static ListItem[] PrintReport()
         {
-            ListItem[] lis = new ListItem[16];
+            ListItem[] lis = new ListItem[17];
             lis[0] = new ListItem("管道焊接工作记录", BLL.Const.JointInfoReportId);
             lis[1] = new ListItem("管道焊口日报表", BLL.Const.JointReportDayReportId);
             lis[2] = new ListItem("管道点口日报表", BLL.Const.PointReportDayReportId);
@@ -37,8 +37,10 @@ namespace BLL
             lis[13] = new ListItem("射线结果确认表", BLL.Const.RTCheckResultReportId);
             lis[14] = new ListItem("管道焊接接头射线检测比例确认表（一）", BLL.Const.WeldJointRTCheck1ReportId);
             lis[15] = new ListItem("管道焊接接头射线检测比例确认表（二）", BLL.Const.WeldJointRTCheck2ReportId);
+            lis[16] = new ListItem("管道系统压力试验记录", BLL.Const.TestPackageManageReportId);
+            
 
-           
+
             return lis;
         }
 

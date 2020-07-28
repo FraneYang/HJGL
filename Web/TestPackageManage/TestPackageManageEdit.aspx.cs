@@ -306,12 +306,16 @@ namespace Web.TestPackageManage
                     testPackage.PTP_CleaningMedium = this.txtPTP_CleaningMedium.Text.Trim();
                     testPackage.PTP_AllowSeepage = this.txtPTP_AllowSeepage.Text.Trim();
                     testPackage.PTP_FactSeepage = this.txtPTP_FactSeepage.Text.Trim();
-
+                   
                     var updatetestPackage = BLL.TestPackageManageEditService.GetTP_TestPackageByID(PTP_ID);
                     if (updatetestPackage != null && updatetestPackage.PTP_AduditDate.HasValue)
                     {
                         ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('此条试压单已审核不能修改！');", true);
                         return;
+                    }
+                    if (isoInfos.Count() > 0 && isoInfos.FirstOrDefault() != null)
+                    {
+                        testPackage.WorkAreaId = isoInfos.FirstOrDefault().BAW_ID;
                     }
 
                     if (updatetestPackage != null && !string.IsNullOrEmpty(PTP_ID))
@@ -360,9 +364,11 @@ namespace Web.TestPackageManage
             isoInfos.Clear();
             for (int i = 0; i < this.gvTestPackage.Rows.Count; i++)
             {
-                HiddenField hdISO_ID = (HiddenField)(this.gvTestPackage.Rows[i].FindControl("hdISO_ID"));                              
-                Model.PW_IsoInfo item = new Model.PW_IsoInfo();
-                item.ISO_ID = hdISO_ID.Value;
+                HiddenField hdISO_ID = (HiddenField)(this.gvTestPackage.Rows[i].FindControl("hdISO_ID"));
+                Model.PW_IsoInfo item = new Model.PW_IsoInfo
+                {
+                    ISO_ID = hdISO_ID.Value
+                };
                 var view = BLL.PW_IsoInfoService.GetIsoInfoByIsoInfoId(item.ISO_ID);
                 isoInfos.Add(view);   
             }
@@ -704,7 +710,40 @@ namespace Web.TestPackageManage
             }
         }
         #endregion
+        #region 打印按钮事件
+        protected void btnPrint_Click(object sender, ImageClickEventArgs e)
+        {
 
+            if (ButtonList.Contains(BLL.Const.BtnPrint) || this.CurrUser.Account == BLL.Const.AdminId)
+            {
+                if (!string.IsNullOrEmpty(PTP_ID))
+                {
+                    string reportId = PTP_ID;
+                    ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script type='text/javascript'>CheckReportPrint('" + BLL.Const.TestPackageManageReportId + "','" + reportId + "','');</script>");
+
+                    //var test = BLL.TestPackageManageEditService.GetTP_TestPackageByID(PTP_ID);
+                    //if (test != null && !test.PTP_AduditDate.HasValue)
+                    //{
+
+                    //}
+                    //else
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('此试压单已审核不能删除！');", true);
+                    //}
+
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('请选择要打印的试压记录！')", true);
+                    return;
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('您没有这个权限，请与管理员联系！')", true);
+            }
+        }
+        #endregion
         #region 删除按钮事件
         /// <summary>
         ///  删除按钮事件

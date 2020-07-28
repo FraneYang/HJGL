@@ -302,7 +302,7 @@
         </tr>
     </table> 
     <script type="text/javascript" language="javascript">
-         function init() {
+        function init() {
              setInit('ReadExReportFile.aspx?reportId='+<%=reportId %>); 
              ChinaExcel.SetOnlyShowTipMessage(false);
          }

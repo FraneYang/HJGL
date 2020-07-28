@@ -92,7 +92,7 @@ namespace Web.ReportPrint
             {
                 BLL.SQLHelper.RunSqlString(str, "ReportServer");
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 Response.Write(ex.Message);
                 Response.Write(ex.Source);

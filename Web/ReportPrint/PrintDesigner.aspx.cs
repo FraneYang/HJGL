@@ -118,6 +118,11 @@ namespace Web.ReportPrint
                 BLL.LogService.AddLog(this.CurrUser.UserId, "设计管道焊接接头射线检测比例确认表（二）");
                 Response.Redirect("ExPrintSet.aspx?reportId=" + BLL.Const.WeldJointRTCheck2ReportId + "&reportName=管道焊接接头射线检测比例确认表（二）");
             }
+            if (this.drpPrintReport.SelectedValue.Trim() == BLL.Const.TestPackageManageReportId)
+            {
+                BLL.LogService.AddLog(this.CurrUser.UserId, "管道系统压力试验记录");
+                Response.Redirect("ExPrintSet.aspx?reportId=" + BLL.Const.TestPackageManageReportId + "&reportName=管道系统压力试验记录");
+            }
         }
     }
 }

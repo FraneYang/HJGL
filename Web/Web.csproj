@@ -1474,11 +1474,13 @@
     <None Include="Ext\resources\images\default\window\top-bottom.psd" />
     <None Include="Ext\resources\images\gray\window\left-corners.pspimage" />
     <None Include="Ext\resources\resources.jsb" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="ReportPrint\ReportTabFile\无损检测委托单.tab" />
     <None Include="ReportPrint\ReportTabFile\无损检测结果通知单.tab" />
     <None Include="ReportPrint\ReportTabFile\管道点口日报表.tab" />
     <None Include="ReportPrint\ReportTabFile\管道焊口日报表.tab" />
     <None Include="ReportPrint\ReportTabFile\管道焊接工作记录.tab" />
+    <Content Include="ReportPrint\ReportTabFile\管道系统压力试验记录.tab" />
     <None Include="Service References\HSSEService\HSSEService.disco" />
     <None Include="Service References\HSSEService\configuration91.svcinfo" />
     <None Include="Service References\HSSEService\configuration.svcinfo" />
