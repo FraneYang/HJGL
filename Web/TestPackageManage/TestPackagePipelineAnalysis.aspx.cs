@@ -28,14 +28,34 @@ namespace Web.TestPackageManage
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && this.CurrUser != null)
-            {
+            {             
                 if (this.CurrUser.ProjectId == null)
                 {
                     this.trProject.Visible = true;
                     Funs.PleaseSelect(this.drpProject);
-                    this.drpProject.Items.AddRange(ProjectService.GetProjectList());
-                }                            
-                
+                    this.drpProject.Items.AddRange(ProjectService.GetProjectList());                   
+                }
+
+                Funs.PleaseSelect(ddlWorkArea);
+                var unit = BLL.UnitService.GetUnit(this.CurrUser.UnitId);
+                if (unit != null && unit.UnitType == "2")
+                {
+                    this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameList(this.CurrUser.ProjectId, this.CurrUser.UnitId));
+                    this.ddlUnit.SelectedValue = this.CurrUser.UnitId;
+                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.CurrUser.ProjectId, this.CurrUser.UnitId));
+                }
+                else
+                {
+                    Funs.PleaseSelect(ddlUnit);
+                    if (BLL.WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
+                    {
+                        this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameBySupervisorUnitIdList(this.CurrUser.ProjectId, this.CurrUser.UnitId));
+                    }
+                    else
+                    {
+                        this.ddlUnit.Items.AddRange(BLL.UnitService.GetSubUnitNameList(this.CurrUser.ProjectId));
+                    }
+                }
                 this.Flag = "0";
             }
         }
@@ -69,6 +89,10 @@ namespace Web.TestPackageManage
             {
                 e.InputParameters["projectId"] = this.CurrUser.ProjectId;
             }
+          
+            e.InputParameters["unitId"] = this.ddlUnit.SelectedValue;
+            e.InputParameters["workAreaId"] = this.ddlWorkArea.SelectedValue;
+            e.InputParameters["testPackageNo"] = this.txtTestPackageNo.Text.Trim();
             e.InputParameters["flag"] = Flag;
         }
       
@@ -90,6 +114,11 @@ namespace Web.TestPackageManage
             this.Flag = "1";
             this.gvIsoCompre.PageIndex = 0;
             this.gvIsoCompre.DataBind();
+            if (this.gvIsoCompre.Rows.Count == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('无数据！')", true);
+                return;
+            }
         }
 
         /// <summary>
@@ -140,6 +169,31 @@ namespace Web.TestPackageManage
 
         protected void drpProject_SelectedIndexChanged(object sender, EventArgs e)
         {           
+        }
+        /// <summary>
+        ///  单位下拉框联动事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ddlUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ddlWorkArea.Items.Clear();
+            Funs.PleaseSelect(ddlWorkArea);
+            if (this.CurrUser.ProjectId == null)   //总部
+            {
+                this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.drpProject.SelectedValue, this.ddlUnit.SelectedValue));
+            }
+            else  //现场
+            {
+                if (BLL.WorkAreaService.IsSupervisor(this.CurrUser.UnitId, this.CurrUser.ProjectId))
+                {
+                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListBySupervisorUnit(this.CurrUser.ProjectId, this.ddlUnit.SelectedValue, this.CurrUser.UnitId));
+                }
+                else
+                {
+                    this.ddlWorkArea.Items.AddRange(BLL.WorkAreaService.GetWorkAreaListByUnit(this.CurrUser.ProjectId, this.ddlUnit.SelectedValue));
+                }
+            }
         }
     }
 }

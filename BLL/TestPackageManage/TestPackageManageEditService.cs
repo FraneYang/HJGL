@@ -82,6 +82,7 @@ namespace BLL
             newTestPackage.PTP_FactSeepage = testPackage.PTP_FactSeepage;
             newTestPackage.ProjectId = testPackage.ProjectId;
             newTestPackage.InstallationId = testPackage.InstallationId;
+            newTestPackage.WorkAreaId = testPackage.WorkAreaId;
             db.TP_TestPackage.InsertOnSubmit(newTestPackage);
             db.SubmitChanges();
         }
@@ -93,44 +94,48 @@ namespace BLL
         public static void UpdateTP_TestPackage(Model.TP_TestPackage testPackage)
         {
             Model.HJGLDB db = Funs.DB;
-            Model.TP_TestPackage newTestPackage = db.TP_TestPackage.First(e => e.PTP_ID == testPackage.PTP_ID);
-            newTestPackage.BSU_ID = testPackage.BSU_ID;
-            newTestPackage.PT_ID = testPackage.PT_ID;
-            newTestPackage.PTP_TestPackageNo = testPackage.PTP_TestPackageNo;
-            newTestPackage.PTP_TestPackageName = testPackage.PTP_TestPackageName;
-            newTestPackage.PTP_TestHeat = testPackage.PTP_TestHeat;
-            newTestPackage.PTP_TestService = testPackage.PTP_TestService;
-            newTestPackage.PTP_TestType = testPackage.PTP_TestType;
-            newTestPackage.PTP_Finisher = testPackage.PTP_Finisher;
-            newTestPackage.PTP_FinishDate = testPackage.PTP_FinishDate;
-            newTestPackage.PTP_Tabler = testPackage.PTP_Tabler;
-            newTestPackage.PTP_TableDate = testPackage.PTP_TableDate;
-            newTestPackage.PTP_Modifier = testPackage.PTP_Modifier;
-            newTestPackage.PTP_ModifyDate = testPackage.PTP_ModifyDate;
-            newTestPackage.PTP_Auditer = testPackage.PTP_Auditer;
-            newTestPackage.PTP_AduditDate = testPackage.PTP_AduditDate;
-            newTestPackage.PTP_Remark = testPackage.PTP_Remark;
-            newTestPackage.PTP_TestPackageCode = testPackage.PTP_TestPackageCode;
-            newTestPackage.PTP_TestAmbientTemp = testPackage.PTP_TestAmbientTemp;
-            newTestPackage.PTP_TestMediumTemp = testPackage.PTP_TestMediumTemp;
-            newTestPackage.PTP_TestPressure = testPackage.PTP_TestPressure;
-            newTestPackage.PTP_TestPressureTemp = testPackage.PTP_TestPressureTemp;
-            newTestPackage.PTP_TestPressureTime = testPackage.PTP_TestPressureTime;
-            newTestPackage.PTP_TightnessTest = testPackage.PTP_TightnessTest;
-            newTestPackage.PTP_TightnessTestTemp = testPackage.PTP_TightnessTestTemp;
-            newTestPackage.PTP_TightnessTestTime = testPackage.PTP_TightnessTestTime;
-            newTestPackage.PTP_LeakageTestService = testPackage.PTP_LeakageTestService;
-            newTestPackage.PTP_LeakageTestPressure = testPackage.PTP_LeakageTestPressure;
-            newTestPackage.PTP_VacuumTestService = testPackage.PTP_VacuumTestService;
-            newTestPackage.PTP_VacuumTestPressure = testPackage.PTP_VacuumTestPressure;
-            newTestPackage.PTP_OperationMedium = testPackage.PTP_OperationMedium;
-            newTestPackage.PTP_PurgingMedium = testPackage.PTP_PurgingMedium;
-            newTestPackage.PTP_CleaningMedium = testPackage.PTP_CleaningMedium;
-            newTestPackage.PTP_AllowSeepage = testPackage.PTP_AllowSeepage;
-            newTestPackage.PTP_FactSeepage = testPackage.PTP_FactSeepage;
-            newTestPackage.ProjectId = testPackage.ProjectId;
-            newTestPackage.InstallationId = testPackage.InstallationId;
-            db.SubmitChanges();
+            Model.TP_TestPackage newTestPackage = db.TP_TestPackage.FirstOrDefault(e => e.PTP_ID == testPackage.PTP_ID);
+            if (newTestPackage != null)
+            {
+                newTestPackage.BSU_ID = testPackage.BSU_ID;
+                newTestPackage.PT_ID = testPackage.PT_ID;
+                newTestPackage.PTP_TestPackageNo = testPackage.PTP_TestPackageNo;
+                newTestPackage.PTP_TestPackageName = testPackage.PTP_TestPackageName;
+                newTestPackage.PTP_TestHeat = testPackage.PTP_TestHeat;
+                newTestPackage.PTP_TestService = testPackage.PTP_TestService;
+                newTestPackage.PTP_TestType = testPackage.PTP_TestType;
+                newTestPackage.PTP_Finisher = testPackage.PTP_Finisher;
+                newTestPackage.PTP_FinishDate = testPackage.PTP_FinishDate;
+                newTestPackage.PTP_Tabler = testPackage.PTP_Tabler;
+                newTestPackage.PTP_TableDate = testPackage.PTP_TableDate;
+                newTestPackage.PTP_Modifier = testPackage.PTP_Modifier;
+                newTestPackage.PTP_ModifyDate = testPackage.PTP_ModifyDate;
+                newTestPackage.PTP_Auditer = testPackage.PTP_Auditer;
+                newTestPackage.PTP_AduditDate = testPackage.PTP_AduditDate;
+                newTestPackage.PTP_Remark = testPackage.PTP_Remark;
+                newTestPackage.PTP_TestPackageCode = testPackage.PTP_TestPackageCode;
+                newTestPackage.PTP_TestAmbientTemp = testPackage.PTP_TestAmbientTemp;
+                newTestPackage.PTP_TestMediumTemp = testPackage.PTP_TestMediumTemp;
+                newTestPackage.PTP_TestPressure = testPackage.PTP_TestPressure;
+                newTestPackage.PTP_TestPressureTemp = testPackage.PTP_TestPressureTemp;
+                newTestPackage.PTP_TestPressureTime = testPackage.PTP_TestPressureTime;
+                newTestPackage.PTP_TightnessTest = testPackage.PTP_TightnessTest;
+                newTestPackage.PTP_TightnessTestTemp = testPackage.PTP_TightnessTestTemp;
+                newTestPackage.PTP_TightnessTestTime = testPackage.PTP_TightnessTestTime;
+                newTestPackage.PTP_LeakageTestService = testPackage.PTP_LeakageTestService;
+                newTestPackage.PTP_LeakageTestPressure = testPackage.PTP_LeakageTestPressure;
+                newTestPackage.PTP_VacuumTestService = testPackage.PTP_VacuumTestService;
+                newTestPackage.PTP_VacuumTestPressure = testPackage.PTP_VacuumTestPressure;
+                newTestPackage.PTP_OperationMedium = testPackage.PTP_OperationMedium;
+                newTestPackage.PTP_PurgingMedium = testPackage.PTP_PurgingMedium;
+                newTestPackage.PTP_CleaningMedium = testPackage.PTP_CleaningMedium;
+                newTestPackage.PTP_AllowSeepage = testPackage.PTP_AllowSeepage;
+                newTestPackage.PTP_FactSeepage = testPackage.PTP_FactSeepage;
+                newTestPackage.ProjectId = testPackage.ProjectId;
+                newTestPackage.InstallationId = testPackage.InstallationId;
+                newTestPackage.WorkAreaId = testPackage.WorkAreaId;
+                db.SubmitChanges();
+            }
         }
 
         /// <summary>

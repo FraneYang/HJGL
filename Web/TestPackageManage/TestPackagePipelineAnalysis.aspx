@@ -38,10 +38,33 @@
                              AutoPostBack="true" onselectedindexchanged="drpProject_SelectedIndexChanged">
                             </asp:DropDownList>
                         </td>
+                        <td colspan="5">
+                        </td>
                     </tr> 
                     <tr>
-                        <td colspan="2">
-                           
+                         <td align="right" style="width:8%">
+                            <asp:Label ID="Label2" runat="server" Text="单位"></asp:Label>&nbsp;
+                        </td>
+                        <td align="left" style="width:17%">
+                            <asp:DropDownList ID="ddlUnit" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%" AutoPostBack="true" OnSelectedIndexChanged="ddlUnit_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </td>
+                         <td align="right" style="width:8%">
+                            <asp:Label ID="Label4" runat="server" Text="工作区"></asp:Label>&nbsp;
+                        </td>
+                        <td align="left" style="width:17%">
+                            <asp:DropDownList ID="ddlWorkArea" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%">
+                            </asp:DropDownList>
+                        </td>
+                        <td align="right" style="width:8%">
+                            <asp:Label ID="Label13" runat="server" Text="施压包号"></asp:Label>&nbsp;
+                        </td>
+                        <td align="left" style="width:17%">
+                            <asp:TextBox ID="txtTestPackageNo" runat="server" CssClass="textboxStyle" Height="22px"
+                                Width="90%">
+                            </asp:TextBox>
                         </td>
                        <td align="right">
                             <asp:ImageButton ID="btnFind" runat="server" ImageUrl="~/Images/Statistics.gif" ValidationGroup="Save"
@@ -411,6 +434,9 @@
                         EnablePaging="True" EnableCaching="false">
                         <SelectParameters>                          
                             <asp:Parameter Name="projectId" />
+                            <asp:Parameter Name ="unitId" />
+                            <asp:Parameter Name ="workAreaId" />
+                            <asp:Parameter Name ="testPackageNo" />
                             <asp:Parameter Name ="flag" />
                         </SelectParameters>
                     </asp:ObjectDataSource>

@@ -313,6 +313,10 @@ namespace Web.TestPackageManage
                         ScriptManager.RegisterStartupScript(this, typeof(string), "_alert", "alert('此条试压单已审核不能修改！');", true);
                         return;
                     }
+                    if (isoInfos.Count() > 0 && isoInfos.FirstOrDefault() != null)
+                    {
+                        testPackage.WorkAreaId = isoInfos.FirstOrDefault().BAW_ID;
+                    }
 
                     if (updatetestPackage != null && !string.IsNullOrEmpty(PTP_ID))
                     {
@@ -360,9 +364,11 @@ namespace Web.TestPackageManage
             isoInfos.Clear();
             for (int i = 0; i < this.gvTestPackage.Rows.Count; i++)
             {
-                HiddenField hdISO_ID = (HiddenField)(this.gvTestPackage.Rows[i].FindControl("hdISO_ID"));                              
-                Model.PW_IsoInfo item = new Model.PW_IsoInfo();
-                item.ISO_ID = hdISO_ID.Value;
+                HiddenField hdISO_ID = (HiddenField)(this.gvTestPackage.Rows[i].FindControl("hdISO_ID"));
+                Model.PW_IsoInfo item = new Model.PW_IsoInfo
+                {
+                    ISO_ID = hdISO_ID.Value
+                };
                 var view = BLL.PW_IsoInfoService.GetIsoInfoByIsoInfoId(item.ISO_ID);
                 isoInfos.Add(view);   
             }

@@ -31,7 +31,7 @@ namespace BLL
         /// <param name="startRowIndex"></param>
         /// <param name="maximumRows"></param>
         /// <returns></returns>
-        public static IEnumerable GetListData( string projectId, string flag, int startRowIndex, int maximumRows)
+        public static IEnumerable GetListData( string projectId, string unitId,string workAreaId,string testPackageNo, string flag, int startRowIndex, int maximumRows)
         {
             if (flag != "1" || string.IsNullOrEmpty(projectId))
             {
@@ -40,7 +40,7 @@ namespace BLL
             }
             else
             {
-                IQueryable<Model.SpTestPackagePipelineAnalysisItem> q = GetTestPackagePipelineAnalysisList(projectId, flag).AsQueryable();
+                IQueryable<Model.SpTestPackagePipelineAnalysisItem> q = GetTestPackagePipelineAnalysisList(projectId, unitId, workAreaId, testPackageNo).AsQueryable();
               count = q.Count();
                 if (count == 0)
                 {
@@ -97,7 +97,7 @@ namespace BLL
         /// <param name="projectId"></param>
         /// <param name="flag"></param>
         /// <returns></returns>
-        public static int GetListCount(string projectId, string flag)
+        public static int GetListCount(string projectId, string unitId, string workAreaId, string testPackageNo, string flag)
         {
             return count;
         }
@@ -108,17 +108,17 @@ namespace BLL
         /// <param name="projectId"></param>
         /// <param name="flag"></param>
         /// <returns></returns>
-        public static List<Model.SpTestPackagePipelineAnalysisItem> GetTestPackagePipelineAnalysisList(string projectId, string flag)
+        public static List<Model.SpTestPackagePipelineAnalysisItem> GetTestPackagePipelineAnalysisList(string projectId, string unitId, string workAreaId, string testPackageNo)
         {
             List<Model.SpTestPackagePipelineAnalysisItem> getSpItemLists = new List<Model.SpTestPackagePipelineAnalysisItem>();
             var getTestPackages = from x in Funs.DB.TP_TestPackage
-                                  where x.ProjectId == projectId
-                                  //&& x.PTP_TestPackageNo == "3-OH-3522-2AHA"
+                                  where x.ProjectId == projectId  &&  (x.BSU_ID==unitId || unitId == "0" || unitId == null)  && (x.WorkAreaId == workAreaId || workAreaId == "0" || workAreaId == null)
+                                  && (x.PTP_TestPackageNo.Contains(testPackageNo) || testPackageNo == null)
                                   select x;
             var getISOs = from x in Funs.DB.PW_IsoInfo
-                          where x.ProjectId == projectId
+                          where x.ProjectId == projectId && (x.BSU_ID == unitId || unitId == "0" || unitId == null) && (x.BAW_ID == workAreaId || workAreaId == "0" || workAreaId == null)
                           select x;
-            var getWelders = Funs.DB.BS_Welder.Where(x => x.ProjectId == projectId).ToList();
+            var getWelders = Funs.DB.BS_Welder.Where(x => x.ProjectId == projectId && (x.WED_Unit == unitId || unitId == "0" || unitId == null)).ToList();
             if (getTestPackages.Count() > 0)
             {
                 foreach (var testItem in getTestPackages)
