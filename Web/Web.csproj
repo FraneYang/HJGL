@@ -1445,21 +1445,9 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery.autocomplete.js" />
-    <Content Include="aspnet_client\FreeTextBox\images\css\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\images\misc\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\images\subs\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\images\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\Languages\vssver.scc" />
     <Content Include="aspnet_client\FreeTextBox\Languages\_sgbak\de-de.xml.2005-03-22.10-39-30.0156" />
     <Content Include="aspnet_client\FreeTextBox\Languages\_sgbak\Languages.xml.2005-03-17.21-30-04.5156" />
     <Content Include="aspnet_client\FreeTextBox\Languages\_sgbak\Languages.xml.2005-03-22.10-39-19.7187" />
-    <Content Include="aspnet_client\FreeTextBox\office2000\subs\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\office2000\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\officeMac\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\officeXP\old\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\officeXP\subs\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\officeXP\vssver.scc" />
-    <Content Include="aspnet_client\FreeTextBox\utility\vssver.scc" />
     <None Include="ceuser\ceuser.dat" />
     <None Include="Ext\icons\fam\Thumbs.db" />
     <None Include="Ext\icons\Thumbs.db" />
@@ -2689,14 +2677,7 @@
     <None Include="aspnet_client\FreeTextBox\images\misc\Picasa.ini" />
     <None Include="aspnet_client\FreeTextBox\images\misc\ToolbarButton-Background.psd" />
     <None Include="aspnet_client\FreeTextBox\images\Picasa.ini" />
-    <None Include="aspnet_client\FreeTextBox\office2000\subs\Thumbs.db" />
-    <None Include="aspnet_client\FreeTextBox\office2000\Thumbs.db" />
     <None Include="aspnet_client\FreeTextBox\officeMac\Picasa.ini" />
-    <None Include="aspnet_client\FreeTextBox\officeMac\Thumbs.db" />
-    <None Include="aspnet_client\FreeTextBox\officeXP\old\Thumbs.db" />
-    <None Include="aspnet_client\FreeTextBox\officeXP\subs\Thumbs.db" />
-    <None Include="aspnet_client\FreeTextBox\officeXP\Thumbs.db" />
-    <None Include="aspnet_client\FreeTextBox\utility\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -2704,8 +2685,13 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\HSSEService\" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
